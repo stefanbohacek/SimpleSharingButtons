@@ -14,6 +14,10 @@ This repository hosts the basic code for the HTML sharing buttons for all suppor
 * Reddit
 * LinkedIn
 
+The URL of the website you want to share and other parameters, such as description, need to be encoded. [Here](http://meyerweb.com/eric/tools/dencoder) is a simple URL encoding tool -- or you can just use the [generator app](http://simplesharingbuttons.com/).
+
+
+
 To use the image-based sharing buttons, you will need to include this CSS:
 
     .share-buttons{
