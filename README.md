@@ -32,8 +32,6 @@ To use the Font Awesome icon font you can either download it from the [official 
 
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
 
-Note that you will also need to apply custom CSS (for color, hover style etc).
-
 
 You can read more about the generator [on my blog](http://blog.fourtonfish.com/tagged/simple-sharing-buttons).
 
