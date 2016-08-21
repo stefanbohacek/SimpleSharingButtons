@@ -193,7 +193,7 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
 
   $scope.html = '';
   $scope.preview_html = '';
-  $scope.original_css = 'ul.share-buttons{\n  list-style: none;\n  padding: 0;\n}\n\nul.share-buttons li{\n  display: inline;\n}';
+  $scope.original_css = 'ul.share-buttons{\n  list-style: none;\n  padding: 0;\n}\n\nul.share-buttons li{\n  display: inline;\n}\n\nul.share-buttons .sr-only {\n  position: absolute;\n  clip: rect(1px 1px 1px 1px);\n  clip: rect(1px, 1px, 1px, 1px);\n  padding: 0;\n  border: 0;\n  height: 1px;\n  width: 1px;\n  overflow: hidden;\n}';
   $scope.css = $scope.original_css;
 
   $scope.show_download = true;
