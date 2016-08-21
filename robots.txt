@@ -1,0 +1,9 @@
+User-agent: Browsershots
+Disallow: 
+User-agent: Python-urllib
+Disallow: /
+User-agent: MJ12bot
+Disallow: /
+User-agent: *
+Disallow: 
+Sitemap: http://simplesharingbuttons.com/sitemap.xml
