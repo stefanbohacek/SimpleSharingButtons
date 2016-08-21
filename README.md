@@ -30,3 +30,4 @@ The site will be accessible at `http://localhost:3000/`.
 And of course:
 
 - [simplesharingbuttons.com](https://simplesharingbuttons.com/)
+- [botwiki.org](https://botwiki.org/)
