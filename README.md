@@ -8,7 +8,7 @@ See updates and version history at [blog.simplesharingbuttons.com](http://blog.s
 
 ## Notes
 
-This is an old project I started three years ago and there's quite a few things I wanted to clean up before open-sourcing it. Not having enough time to do that, I decided to put the source code on GitHub as it is.
+This is an old project I started in early 2014 and there's quite a few things I wanted to clean up before open-sourcing it. Not having enough time to do that, I decided to put the source code on GitHub as it is.
 
 Also note that Facebook [no longer accepts custom parameters](https://developers.facebook.com/bugs/357750474364812), you need to use [Open Graph](http://ogp.me/) instead.
 
