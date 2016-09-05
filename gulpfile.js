@@ -8,7 +8,8 @@ var gulp = require('gulp'),
     clean = require('gulp-clean'),
     notify = require('gulp-notify'),
     cache = require('gulp-cache'),
-    browserSync = require('browser-sync');
+    browserSync = require('browser-sync')
+    reload = browserSync.reload;
 
 gulp.task('browser-sync', function () {
    var files = [
@@ -29,16 +30,20 @@ gulp.task('browser-sync', function () {
 });
 
 gulp.task('styles', function() {
-  return gulp.src('src/styles/*.less')
+  return gulp.src('src/styles/main.*')
     .pipe(less({
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }))
     .pipe(autoprefixer('last 3 version', 'android >= 3', { cascade: true }))
+    .pipe(gulp.dest('css'))
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
     .pipe(gulp.dest('css'))
-    .pipe(notify({ message: 'Styles task complete' }));
+    .pipe(notify({ message: 'Styles task complete' }))
+    .pipe(reload({stream:true}));
 });
+
+
 
 gulp.task('scripts', function() {
   return gulp.src('src/scripts/**/*.js')

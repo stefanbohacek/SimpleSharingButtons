@@ -1,0 +1,52 @@
+a{
+  font-weight: bold;
+  color: @link-color;
+  transition: 0.3s;
+}
+
+a i:hover,
+a:hover{
+  transition: 0.1s;
+  color: @link-color - #444;
+}
+
+
+.shifted,
+.unshifted,
+.shifted-icons{
+  transition: all 0.6s;
+}
+
+.shifted,
+.shifted-icons{
+  transform: translate(0, 20px);
+  opacity: 0;
+}
+
+.shifted-icons{
+  transform: zoom(1.1, 1.1);
+}
+
+.shifted-reverse{
+  transform: translate(0, -10px);
+  opacity: 0;
+}
+
+.shifted-icons{
+  transform: translate(0, -100px);
+}
+
+.unshifted{
+  transform: translate(0, 0);
+  transform: zoom(1, 1);
+}
+
+
+.zoomed-in{
+  transform: zoom(1.1, 1.1);
+}
+
+.zoomed-out{
+  transform: zoom(1, 1);
+}
+

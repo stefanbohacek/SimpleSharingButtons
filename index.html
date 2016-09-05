@@ -1,5 +1,5 @@
 <!doctype html>
-<!--
+<!-- TODO: https://github.com/fourtonfish/SimpleSharingButtons/issues/13
 <html itemscope itemtype="http://schema.org/WebApplication" ng-app="app" ng-controller="AppCtrl" manifest="/cache.manifest">
 -->
 <html itemscope itemtype="http://schema.org/WebApplication" ng-app="app" ng-controller="AppCtrl">
@@ -28,9 +28,8 @@
   <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  <link rel="stylesheet" href="css/styles.2.8.4.min.css">
-  <link href='//fonts.googleapis.com/css?family=Merriweather+Sans' rel='stylesheet' type='text/css'>
-  <link href='//fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/main.2.9.min.css">
+  <link href='//fonts.googleapis.com/css?family=Merriweather+Sans|Fjalla+One' rel='stylesheet' type='text/css'>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
   <meta name="msapplication-TileColor" content="#FFFFFF">
   <meta name="msapplication-TileImage" content="images/favicon-144.png">
@@ -47,6 +46,7 @@
   <![endif]-->
   <nav class="shifted-reverse" role="navigation">
     <ul class="pull-left">
+      <li><a title="v2.9 by @fourtonfish" goto="intro" href="#intro" onclick="return false;"><span class="label site-logo">SSBG</span></a></li>
       <li><a goto="style" href="#style" onclick="return false;"><i class="fa fa-list"></i><span class="label">Style</span></a></li>
       <li><a goto="networks" href="#networks" onclick="return false;"><i class="fa fa-cog"></i><span class="label">Networks</span></a></li>
       <li><a goto="info" href="#info" onclick="return false;"><i class="fa fa-info-circle"></i><span class="label">Info</span></a></li>
@@ -54,79 +54,76 @@
       <li><a goto="code" href="#code" onclick="return false;"><i class="fa fa-code"></i><span class="label">Code</span></a></li>
     </ul>
     <ul class="pull-right">
+      <li><a href="#about" goto="about" title="Learn more"><i class="fa fa-question-circle"></i></a></li>
       <li><a nightmode href="#" title="Night mode"><i class="fa fa-moon-o"></i></a></li>
-      <span class="author">
-        <li>|</li>
-        <li>by <a href="https://twitter.com/fourtonfish" title="twitter.com/fourtonfish"><strong>@fourtonfish</strong></a></li>
-      </span>
       <li>|</li>
       <li><a href="mailto:stefan@fourtonfish.com?subject=Simple Sharing Buttons Generator" target="_blank" title="Get in touch"><i class="fa fa-envelope"></i></a></li>
     </ul>
   </nav>
-  <section id="intro" class="big yellow">
+  <section id="intro" class="big">
     <div id="intro-content">
       <header>
-        <h1 class="shifted" title="v2.8.4 by @fourtonfish">Simple Sharing Buttons Generator</h1>
+        <h1 class="shifted">Simple Sharing Buttons Generator</h1>
         <ul class="share-buttons share-buttons-margin">
-          <li class="shifted shifted-fast"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fsimplesharingbuttons.com%2F" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a></li>
-          <li class="shifted shifted-fast"><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fsimplesharingbuttons.com%2F&text=Simple%20Sharing%20Buttons%20Generator: http%3A%2F%2Fsimplesharingbuttons.com%2F&via=fourtonfish" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-2x"></i></a></li>
-          <li class="shifted shifted-fast"><a href="https://plus.google.com/share?url=http%3A%2F%2Fsimplesharingbuttons.com%2F" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
-          <li class="shifted shifted-fast"><a href="http://www.tumblr.com/share?v=3&u=http%3A%2F%2Fsimplesharingbuttons.com%2F&t=Simple%20Sharing%20Buttons%20Generator&s=" target="_blank" title="Post to Tumblr"><i class="fa fa-tumblr-square fa-2x"></i></a></li>
-          <li class="shifted shifted-fast"><a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fsimplesharingbuttons.com%2F&media=http://simplesharingbuttons.com/images/preview.png&description=Share%20to%20Facebook%2C%20Twitter%2C%20Google%2B%20and%20other%20social%20networks%20using%20simple%20HTML%20buttons" target="_blank" title="Pin it"><i class="fa fa-pinterest-square fa-2x"></i></a></li>
-          <li class="shifted shifted-fast"><a href="http://www.reddit.com/submit?url=http%3A%2F%2Fsimplesharingbuttons.com%2F&title=Simple%20Sharing%20Buttons%20Generator" target="_blank" title="Submit to Reddit"><i class="fa fa-reddit-square fa-2x"></i></a></li>
-          <li class="shifted shifted-fast"><a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fsimplesharingbuttons.com%2F&title=Simple%20Sharing%20Buttons%20Generator&summary=Share%20to%20Facebook%2C%20Twitter%2C%20Google%2B%20and%20other%20social%20networks%20using%20simple%20HTML%20buttons&source=http%3A%2F%2Fsimplesharingbuttons.com%2F" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-2x"></i></a></li>
-          <li class="shifted shifted-fast"><a href="http://wordpress.com/press-this.php?u=http%3A%2F%2Fsimplesharingbuttons.com%2F&t=Simple%20Sharing%20Buttons%20Generator&s=Share%20to%20Facebook%2C%20Twitter%2C%20Google%2B%20and%20other%20social%20networks%20using%20simple%20HTML%20buttons&i=http://simplesharingbuttons.com/images/preview.png" target="_blank" title="Publish on WordPress"><i class="fa fa-wordpress fa-2x"></i></a></li>
-          <li class="shifted shifted-fast"><a href="mailto:?subject=Simple%20Sharing%20Buttons%20Generator&body=Share%20to%20Facebook%2C%20Twitter%2C%20Google%2B%20and%20other%20social%20networks%20using%20simple%20HTML%20buttons: http%3A%2F%2Fsimplesharingbuttons.com%2F" target="_blank" title="Email"><i class="fa fa-envelope-square fa-2x"></i></a></li>
+          <li class="shifted-icons"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fsimplesharingbuttons.com%2F" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a></li>
+          <li class="shifted-icons"><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fsimplesharingbuttons.com%2F&text=Simple%20Sharing%20Buttons%20Generator: http%3A%2F%2Fsimplesharingbuttons.com%2F&via=fourtonfish" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-2x"></i></a></li>
+          <li class="shifted-icons"><a href="https://plus.google.com/share?url=http%3A%2F%2Fsimplesharingbuttons.com%2F" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
+          <li class="shifted-icons"><a href="http://www.tumblr.com/share?v=3&u=http%3A%2F%2Fsimplesharingbuttons.com%2F&t=Simple%20Sharing%20Buttons%20Generator&s=" target="_blank" title="Post to Tumblr"><i class="fa fa-tumblr-square fa-2x"></i></a></li>
+          <li class="shifted-icons"><a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fsimplesharingbuttons.com%2F&media=http://simplesharingbuttons.com/images/preview.png&description=Share%20to%20Facebook%2C%20Twitter%2C%20Google%2B%20and%20other%20social%20networks%20using%20simple%20HTML%20buttons" target="_blank" title="Pin it"><i class="fa fa-pinterest-square fa-2x"></i></a></li>
+          <li class="shifted-icons"><a href="http://www.reddit.com/submit?url=http%3A%2F%2Fsimplesharingbuttons.com%2F&title=Simple%20Sharing%20Buttons%20Generator" target="_blank" title="Submit to Reddit"><i class="fa fa-reddit-square fa-2x"></i></a></li>
+          <li class="shifted-icons"><a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fsimplesharingbuttons.com%2F&title=Simple%20Sharing%20Buttons%20Generator&summary=Share%20to%20Facebook%2C%20Twitter%2C%20Google%2B%20and%20other%20social%20networks%20using%20simple%20HTML%20buttons&source=http%3A%2F%2Fsimplesharingbuttons.com%2F" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-2x"></i></a></li>
+          <li class="shifted-icons"><a href="http://wordpress.com/press-this.php?u=http%3A%2F%2Fsimplesharingbuttons.com%2F&t=Simple%20Sharing%20Buttons%20Generator&s=Share%20to%20Facebook%2C%20Twitter%2C%20Google%2B%20and%20other%20social%20networks%20using%20simple%20HTML%20buttons&i=http://simplesharingbuttons.com/images/preview.png" target="_blank" title="Publish on WordPress"><i class="fa fa-wordpress fa-2x"></i></a></li>
+          <li class="shifted-icons"><a href="mailto:?subject=Simple%20Sharing%20Buttons%20Generator&body=Share%20to%20Facebook%2C%20Twitter%2C%20Google%2B%20and%20other%20social%20networks%20using%20simple%20HTML%20buttons: http%3A%2F%2Fsimplesharingbuttons.com%2F" target="_blank" title="Email"><i class="fa fa-envelope-square fa-2x"></i></a></li>
         </ul>
         <div class="intro" itemprop="description">
-          <p class="shifted">Create <a href="http://www.ericmobley.net/social-media-share-buttons-impact-on-performance/" target="_blank">light-weight</a>, mobile-friendly sharing buttons for Facebook, Twitter, Google+ and other social media sites. <a href="http://zurb.com/article/883/small-painful-buttons-why-social-media-bu" target="_blank"><strong>Speed up your website or web app</strong></a>, avoid downloading <a href="http://www.benmarshall.me/sharethis-slowing-down-site/" target="_blank">unnecessary JavaScript files</a> and <a href="http://en.wikipedia.org/wiki/Facebook_like_button#Privacy_issues" target="_blank">keep your user's activity private</a>. Choose from <a goto="style" href="#style" onclick="return false;">several styles</a>, including <a href="http://fontawesome.io/" target="_blank"><strong>Font Awesome</strong></a> -- <strong>completely free</strong>.</p>
-          <p class="shifted"><a href="http://blog.fourtonfish.com/simple-sharing-buttons" target="_blank">Learn more</a> or follow <a href="https://twitter.com/fourtonfish" target="_blank">@fourtonfish</a> for updates.</p>
+          <p class="shifted">Create <strong>light-weight</strong>, <strong>mobile-friendly</strong> sharing buttons for Facebook, Twitter, Google+ and other social networks -- it's all <strong>completely free</strong>!</p>
+          <p class="shifted"><a href="#about" goto="about">Learn more</a> or <a href="#style" goto="style">create your buttons</a>.</p>
         </div>
       </header>
-      <a class="next shifted" href="#style" goto="style"><i class="fa fa-hand-o-right"></i>Begin</a>
     </div>
   </section>
-  <section id="style" class="big blue">
+  <section id="style" class="big">
     <div id="section-content">
-      <h1>Choose your style</h1>
+      <h2>Choose your style</h2>
       <form id="form-style" class="radio">
+        <input type="radio" id="style_social_flat_rounded_rects_svg" name="style" ng-model="style" value="social_flat_rounded_rects_svg">
+        <label class="block-label" updatestyle for="style_social_flat_rounded_rects_svg">Social Flat Rounded Rects <sup><strong>SVG</strong></sup>
+          <img title="Preview of Flat Web Icon Set - Color" src="images/social-flat-rounded-rects-svg.png" class="icon-style img-responsive" />
+        </label>
         <input type="radio" id="style_color" name="style" ng-model="style" value="color" checked="checked">
-        <label updatestyle for="style_color">Flat Web Icon Set - Color</label>
-        <br/><a href="images/flat-web-icon-set-color-alt.png" target="_blank"><img title="Preview of Flat Web Icon Set - Color" src="images/flat-web-icon-set-color-alt.png" class="icon-style img-responsive" /></a><br/>
+        <label class="block-label" updatestyle for="style_color">Flat Web Icon Set - Color
+          <img title="Preview of Flat Web Icon Set - Color" src="images/flat-web-icon-set-color-alt.png" class="icon-style img-responsive" />
+        </label>
         <input type="radio" id="style_black" name="style" ng-model="style" value="black">
-        <label updatestyle for="style_black">Flat Web Icon Set - Black</label>
-        <br/><a href="images/flat-web-icon-set-black-alt.png" target="_blank"><img title="Preview of Flat Web Icon Set - Black" src="images/flat-web-icon-set-black-alt.png" class="icon-style img-responsive" /></a><br/>
+        <label class="block-label" updatestyle for="style_black">Flat Web Icon Set - Black
+          <img title="Preview of Flat Web Icon Set - Black" src="images/flat-web-icon-set-black-alt.png" class="icon-style img-responsive" />
+        </label>
         <input type="radio" id="style_inverted" name="style" ng-model="style" value="inverted">
-        <label updatestyle for="style_inverted">Flat Web Icon Set - Inverted</label>
-        <br/><a href="images/flat-web-icon-set-inverted-alt.png" target="_blank"><img title="Preview of Flat Web Icon Set - Inverted" src="images/flat-web-icon-set-inverted-alt.png" class="icon-style img-responsive" /></a><br/>
-        <div id="more-styles">
-          <input type="radio" id="style_font_awesome" name="style" ng-model="style" value="font_awesome">
-          <label updatestyle for="style_font_awesome">Font Awesome<sup onclick="alert('Pocket and Pinboard are not supported by Font Awesome, no code will be generated for these networks.\nYou can apply your own CSS, below is an example style.');" title="Pocket and Pinboard are not supported by Font Awesome, no code will be generated for these networks. 
-
-          You can apply your own CSS, below is an example style."><strong> ? </strong></sup></label>
-          <br/><div class="fa-preview" title="Preview of Font Awesome"><i class="fa fa-facebook-square fa-2x"></i><i class="fa fa-twitter-square fa-2x"></i><i class="fa fa-google-plus-square fa-2x"></i><i class="fa fa-tumblr-square fa-2x"></i><i class="fa fa-pinterest-square fa-2x"></i><i class="fa fa-reddit-square fa-2x"></i><i class="fa fa-linkedin-square fa-2x"></i><i class="fa fa-wordpress fa-2x"></i><i class="fa fa-envelope-square fa-2x"></i></div>       
-
-          <input type="radio" id="style_social_flat_rounded_rects_svg" name="style" ng-model="style" value="social_flat_rounded_rects_svg">
-          <label updatestyle for="style_social_flat_rounded_rects_svg">Social Flat Rounded Rects <sup><strong>SVG</strong></sup></label>
-          <br/><a href="images/flat-web-icon-set-color-alt.png" target="_blank"><img title="Preview of Flat Web Icon Set - Color" src="images/social-flat-rounded-rects-svg.png" class="icon-style img-responsive" /></a><br/>
-          <input type="radio" id="style_simple_icons" name="style" ng-model="style" value="simple_icons">
-          <label updatestyle for="style_simple_icons">Simple Icons</label>
-          <br/><a href="images/simple-icons-alt.png" target="_blank"><img title="Preview of Simple Icons" src="images/simple-icons-alt.png" class="icon-style img-responsive" /></a><br/>
-          <input type="radio" id="style_simple_icons_black" name="style" ng-model="style" value="simple_icons_black">
-          <label updatestyle for="style_simple_icons_black">Simple Icons - Black</label>
-          <br/><a href="images/simple-icons-black-alt.png" target="_blank"><img title="Preview of Simple Icons - Black" src="images/simple-icons-black-alt.png" class="icon-style img-responsive" /></a><br/>
-          <input type="radio" id="style_none" name="style" ng-model="style" value="none">
-          <label updatestyle for="style_none">Text<sup onclick="alert('Names of networks will be used instead of icons. You can apply your own CSS styles.');" title="Names of networks will be used instead of icons. You can apply your own CSS styles."><strong> ? </strong></sup></label>
-          <br/> 
-        </div>
+        <label class="block-label" updatestyle for="style_inverted">Flat Web Icon Set - Inverted
+          <img title="Preview of Flat Web Icon Set - Inverted" src="images/flat-web-icon-set-inverted-alt.png" class="icon-style img-responsive" />
+        </label>
+        <input type="radio" id="style_font_awesome" name="style" ng-model="style" value="font_awesome">
+        <label class="block-label" updatestyle for="style_font_awesome">Font Awesome<sup help class="help" title="Pinboard is not supported by Font Awesome, no code will be generated. You can apply your own CSS, below is an example style."> ? </sup>
+          <div class="fa-preview" title="Preview of Font Awesome"><i class="fa fa-facebook-square"></i><i class="fa fa-twitter-square"></i><i class="fa fa-google-plus-square"></i><i class="fa fa-tumblr-square"></i><i class="fa fa-pinterest-square"></i><i class="fa fa-reddit-square"></i><i class="fa fa-linkedin-square"></i><i class="fa fa-wordpress"></i><i class="fa fa-envelope-square"></i></div>       
+        </label>
+        <input type="radio" id="style_simple_icons" name="style" ng-model="style" value="simple_icons">
+        <label class="block-label" updatestyle for="style_simple_icons">Simple Icons
+          <img title="Preview of Simple Icons" src="images/simple-icons-alt.png" class="icon-style img-responsive" />
+        </label>
+        <input type="radio" id="style_simple_icons_black" name="style" ng-model="style" value="simple_icons_black">
+        <label class="block-label" updatestyle for="style_simple_icons_black">Simple Icons - Black
+          <img title="Preview of Simple Icons - Black" src="images/simple-icons-black-alt.png" class="icon-style img-responsive" />
+        </label>
+        <input type="radio" id="style_none" name="style" ng-model="style" value="none">
+        <label class="block-label" updatestyle for="style_none" title="Names of networks will be used instead of icons. You can apply your own CSS styles.">Only text<sup help class="help" title="Names of networks will be used instead of icons. You can apply your own CSS styles."> ? </sup></label>
       </form>
       <a class="next" href="#networks" goto="networks"><i class="fa fa-hand-o-right"></i>Next</a>
     </div>
   </section>
-  <section id="networks" class="big green">
+  <section id="networks" class="big">
     <div id="section-content">
-      <h1>Choose your <span selectallnetworks title="Click to choose all networks">networks</span></h1>
-      <p ng-show="show_fa_instructions"><em><strong>Note:</strong> <em>Pocket</em> and <em>Pinboard</em> are not supported by <em>Font Awesome</em>, no code will be generated for these networks.</em></p>
+      <h2>Choose your <span selectallnetworks title="Click to choose all networks">networks</span></h2>
+      <p class="instructions" ng-show="show_fa_instructions"><em><strong>Note:</strong> <em>Pocket</em> and <em>Pinboard</em> are not supported by <em>Font Awesome</em>, no code will be generated for these networks.</em></p>
 
       <form id="form-networks" class="checkboxes">
         <div class="one-third">
@@ -158,26 +155,26 @@
           <label for="data_network_email">Email</label><br/>  
         </div>
       </form>
-      <p>Something missing? Check out <a href="https://fourtonfish.com/blog/2013-09-simple-sharing-buttons-free/#other" target="_blank">this blog post</a>.</p>
+      <p class="instructions">Something missing? Check out <a href="https://fourtonfish.com/blog/2013-09-simple-sharing-buttons-free/#other" target="_blank">this blog post</a>.</p>
       <a class="next" href="#info" goto="info"><i class="fa fa-hand-o-right"></i>Next</a>
     </div>
   </section>
-  <section id="info" class="big purpleish">
+  <section id="info" class="big">
     <div id="section-content">
-      <h1>Your website's info</h1>
+      <h2>Your website's info</h2>
       <form id="mode" class="radiobuttons mode-selection">
         <input type="radio" id="modenojs" name="mode" ng-model="mode" value="nojs" checked="checked">
-        <label for="modenojs">No JavaScript <sup title="Default setting. No JavaScript will be used" onclick="alert('Default setting. No JavaScript will be used.'); return false;"><strong> ? </strong></sup></label>
+        <label for="modenojs">No JavaScript <sup help class="help" title="Default setting. No JavaScript will be used"> ? </sup></label>
         <input type="radio" id="modejs" name="mode" ng-model="mode" value="js">
-        <label for="modejs">JavaScript <sup title="This will let you reuse the code across several pages. URL and page title will be automatically detected with JavaScript on each page.\n\nGood for blogs." onclick="alert('This will let you reuse the code across several pages. URL and page title will be automatically detected with JavaScript on each page. Good for blogs.'); return false;"><strong> ? </strong></sup></label>
+        <label for="modejs">JavaScript <sup help class="help" title="This will let you reuse the code across several pages. URL and page title will be automatically detected with JavaScript on each page. Good for blogs."); return false;"> ? </sup></label>
   <!--
         <input type="radio" id="modephp" name="mode" ng-model="mode" value="php">
         <label for="modephp">PHP <sup><strong> BETA </strong></sup></label>
   -->
       </form>
-      <p ng-show="show_fb_instructions"><em><strong>Note:</strong> Facebook <a href="https://developers.facebook.com/bugs/357750474364812/" target="_blank">no longer accepts custom parameters</a>, please use <a href="http://ogp.me/" target="_blank">Open Graph</a> instead.</em></p>
-      <p class="mode-instructions" ng-show="show_jsmode_instructions"><em><strong>Note:</strong> Please set the "URL of your page" below to your home page. This will be a fallback URL when your visitor's JavaScript is disabled.</em></p>
-      <p class="mode-instructions" ng-show="show_php_instructions"><em><strong>Note:</strong> ???</em></p>
+      <p class="instructions" ng-show="show_fb_instructions"><em><strong>Note:</strong> Facebook <a href="https://developers.facebook.com/bugs/357750474364812/" target="_blank">no longer accepts custom parameters</a>, please use <a href="http://ogp.me/" target="_blank">Open Graph</a> instead.</em></p>
+      <p class="instructions mode-instructions" ng-show="show_jsmode_instructions"><em><strong>Note:</strong> Please set the "URL of your page" below to your home page. This will be a fallback URL when your visitor's JavaScript is disabled.</em></p>
+      <p class="instructions mode-instructions" ng-show="show_php_instructions"><em><strong>Note:</strong> ???</em></p>
       <form id="website-info">
       <ul>
       <li>
@@ -193,7 +190,7 @@
         <label for="textarea-description" class="infield">Brief description</label>
         <textarea id="textarea-description" ng-model="description" name="data_description" title="Brief description"></textarea>
       </li>
-      <span class="alt-label" title="You can leave the boxes below empty">Optional</span>
+      <span help class="alt-label help" title="You can leave the boxes below empty">Optional</span>
       <li>
         <label class="infield" for="input-twitter">Your Twitter username <span class="hide-small">(without @)</span></label>
         <input id="input-twitter" ng-model="twitter_handle" type="text" title="Your Twitter username (without @)">
@@ -201,7 +198,7 @@
       <li ng-show="mode == 'nojs'">
         <label class="infield" for="input-image">URL of an image preview*</label>
         <input id="input-image" ng-model="preview_image_url" type="text" title="URL of a preview image (for example screenshot of your page), used with Pinterest and Wordpress">
-        <p class="small-note">* Used with Pinterest and Wordpress. If you want to control which image is used by Facebook, Twitter and Google+, read about <a target="_blank" href="http://ogp.me/">Open Graph</a>, <a target="_blank" href="https://dev.twitter.com/cards/markup">Twitter Card Tags</a> and <a target="_blank" href="https://developers.google.com/+/web/snippet/">Schema.org microdata</a>.</p>
+        <p class="instructions">* The optional image preview is used with Pinterest and Wordpress. If you want to control which image is used by Facebook, Twitter, and Google+, read about <a target="_blank" href="http://ogp.me/">Open Graph</a>, <a target="_blank" href="https://dev.twitter.com/cards/markup">Twitter Card Tags</a> and <a target="_blank" href="https://developers.google.com/+/web/snippet/">Schema.org microdata</a>.</p>
         <div class="preview-image-wrapper">
           <img title="Image preview" ng-src="{{preview_image_thumbnail}}">
 
@@ -212,15 +209,19 @@
       <a class="next" href="#preview" goto="preview"><i class="fa fa-hand-o-right"></i>Next</a>
     </div>
   </section>
-  <section id="preview" class="big blue">
+  <section id="preview" class="big">
     <div id="section-content">
-      <h1>Live preview</h1>
-      <p ng-show="show_fa_instructions"><em><strong>Note:</strong> Pocket and Pinboard are not supported by Font Awesome, no code will be generated for these networks.</em></p>
-      <section id="preview-canvas" ng-bind-html="preview_html"></section>
+      <h2>Live preview</h2>
+      <!-- TODO: The hardcoded value of 32 is a temporary solution to only showing the below note when there is no preview to show.
+           This should definitely be refactored in the future. -->
+      <p class="instructions" ng-show="show_fa_instructions"><em><strong>Note:</strong> Pocket and Pinboard are not supported by Font Awesome, no code will be generated for these networks.</em></p>
+      <p class="instructions" ng-show="html.length === 32"><a href="#networks" goto="networks">Choose some networks first!</a></p>
+      <section id="preview-canvas" ng-bind-html="preview_html">
+      </section>
       <a class="next" href="#code" goto="code"><i class="fa fa-hand-o-right"></i>Next</a>
     </div>
   </section>
-  <section id="code" class="big yellow">
+  <section id="code" class="big">
     <div id="call-out">
       <p class="call-out-label">Find this tool useful?</p>
       <p class="call-out-text">Please consider a small donation via
@@ -244,36 +245,40 @@
         <button name="submit" title="Send via PayPal"><strong>Send</strong> via <i class="fa fa-cc-paypal"></i></button>
         <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
       </form>
-      <p class="call-out-text">
-      PS: Check out more of my projects at <a href="https://fourtonfish.com/">fourtonfish.com</a> and follow (or say <em>thanks</em>) <a href="https://twitter.com/fourtonfish">@fourtonfish</a>.
-      </p>
     </div>
     <div id="section-content">
-      <h1>Grab the code</h1>
+      <h2>Grab the code</h2>
       <form id="generated-code">
-        <span class="alt-alt-label" title="This is your HTML code">HTML</span>
+        <span help class="help alt-alt-label" title="This is your HTML code">HTML</span>
         <textarea ng-model="html" id="generated_html" name="generated_html"></textarea>
-        <span resetcss class="alt-alt-label" title="This is your CSS code, click to reset">CSS</span>
+        <span resetcss class="help alt-alt-label" title="This is your CSS code, click to reset">CSS</span>
         <textarea ng-model="css" id="generated_css" name="generated_css"></textarea>
       </form>
-      <div class="download-wrapper">
+      <div>
         <div ng-show="show_download">
-          <p><strong>Download the icons below.</strong> You will need to upload them to your website and if necessary, change the <code>src</code> attribute of the <code>&lt;img&gt;</code> tags. <a href="http://blog.fourtonfish.com/simple-sharing-buttons#images" target="_blank">Learn how.</a></p>
-          <a download id="download" ng-href="download/{{download_url}}" title="Click to download your icons"><i class="fa fa-download"></i> Download the icons</a>
+          <p class="instructions"><strong>Download the icons below.</strong> You will need to upload them to your website and if necessary, change the <code>src</code> attribute of the <code>&lt;img&gt;</code> tags. <a href="http://blog.fourtonfish.com/simple-sharing-buttons#images" target="_blank">Learn how.</a></p>
+          <p class="download-wrapper center-text">
+            <a download id="download" ng-href="download/{{download_url}}" title="Click to download your icons"><i class="fa fa-download"></i> Download the icons</a>
+          </p>
         </div>
-        <p ng-show="show_fa_instructions">You can download <strong>Font Awesome</strong> from <a href="http://fontawesome.io/" target="_blank">their official website</a>. Alternatively you can include this code inside your <code>head</code> element:<br/>
+        <p class="instructions" ng-show="show_fa_instructions">You can download <strong>Font Awesome</strong> from <a href="http://fontawesome.io/" target="_blank">their official website</a>. Alternatively you can include this code inside your <code>head</code> element:<br/>
           <code>&lt;link href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"&gt;</code><br/>
           Note that you will also need to apply <strong>custom CSS</strong> (for color, hover style etc).
         </p>
-        <p ng-show="show_nostyle_instructions">Don't forget to apply <strong>your own CSS</strong> (for color, hover style etc).
-        </p>        
-        <p>PS: This site is now <a href="https://github.com/fourtonfish/SimpleSharingButtons" target="_blank">open-source</a>!</p>
+        <p class="instructions" ng-show="show_nostyle_instructions">Don't forget to apply <strong>your own CSS</strong> (for color, hover style etc).
+        </p>
       </div>
     </div>
   </section>
-  <section id="attributions" class="big dark-yellow">
+  <section id="about" class="big">
     <div id="section-content">
-      <h1>Attributions</h1>
+      <h2>About this site</h2>
+
+      <p><strong>Simple Sharing Buttons Generator</strong> is an <a href="https://github.com/fourtonfish/SimpleSharingButtons" target="_blank">open source</a> tool made by <a href="https://twitter.com/fourtonfish/" target="_blank">@fourtonfish</a> that lets your create <a href="http://www.ericmobley.net/social-media-share-buttons-impact-on-performance/" target="_blank">light-weight</a> sharing buttons for social networks, including Twitter, Facebook, or Google+, that <a href="http://zurb.com/article/883/small-painful-buttons-why-social-media-bu" target="_blank"><strong>speed up your website</strong></a> by avoiding downloading <a href="http://www.benmarshall.me/sharethis-slowing-down-site/" target="_blank">unnecessary JavaScript files</a> and they <a href="http://en.wikipedia.org/wiki/Facebook_like_button#Privacy_issues" target="_blank">keep your user's activity private</a>.</p>
+      <p>You can choose from <a goto="style" href="#style" onclick="return false;">several styles</a>, including SVG images and <a href="http://fontawesome.io/" target="_blank"><strong>Font Awesome</strong></a>.</p>
+      <p>For more information, <a href="http://blog.fourtonfish.com/simple-sharing-buttons">check out my blog</a>!</p>
+      <p class="hashtags"><a href="https://twitter.com/hashtag/indieweb" target="_blank">#indieweb</a> <a href="https://twitter.com/hashtag/openweb" target="_blank">#openweb</a></p>
+      <h3>Attributions</h3>
       <ul>
         <li>
           <a href="http://iconsandcoffee.com/" target="_blank">iconsandcoffee.com</a>, the creators of the Flat Web Icon Set
@@ -288,12 +293,12 @@
           <a href="http://www.aha-soft.com/" target="_blank">Aha-Soft</a>, the creators of the <a href="https://www.iconfinder.com/iconsets/social-flat-rounded-rects" target="_blank">Social Flat Rounded Rects</a> icon set
         </li>
       </ul>
-    <a gototop class="next" href="#"><i class="fa fa-hand-o-right"></i>Back to top</a>
-  </div>
-</section>
+      <a gototop class="next" href="#"><i class="fa fa-hand-o-right"></i>Back to top</a>
+    </div>
+  </section>
 <script defer src="libs/jquery.min.js"></script>
 <script defer src="libs/angular.min.js"></script>
-<script defer src="js/controllers.2.8.4.js"></script>
+<script defer src="js/controllers.2.9.min.js"></script>
 <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-39782822-3', 'auto');ga('require', 'displayfeatures');ga('send', 'pageview');</script>
 <script type="text/javascript">var sc_project=9860614;var sc_invisible=1;var sc_security="58a35609";var scJsHost = (("https:" == document.location.protocol) ? "https://secure." : "http://www.");document.write("<sc"+"ript async type='text/javascript' src='" +scJsHost+"statcounter.com/counter/counter.js'></"+"script>");</script><noscript><div class="statcounter"><a title="site stats" href="http://statcounter.com/" target="_blank"><img class="statcounter" src="http://c.statcounter.com/9860614/0/58a35609/1/" alt="site stats"></a></div></noscript>
 </body>

@@ -84,126 +84,141 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
         $previewSection = $('section#preview'),
         $codeSection = $('section#code'),
         $introSection = $('section#intro'),
-        $attributionsSection = $('section#attributions');
+        $aboutSection = $('section#about');
 
       $(window).scroll(function() {
         //$('.highlighted').removeClass('highlighted');
 
         if ($styleSection.isOnScreen(0.5, 0.5)){
           $('.highlighted').removeClass('highlighted');
-          $styleLabel.addClass('highlighted');          
+          $styleLabel.addClass('highlighted');
+          history.pushState(null, null, '#style');
         }
 
         if ($networksSection.isOnScreen(0.5, 0.5)){
           $('.highlighted').removeClass('highlighted');
           $networksLabel.addClass('highlighted');          
+          history.pushState(null, null, '#networks');
         }
 
         if ($infoSection.isOnScreen(0.5, 0.5)){
           $('.highlighted').removeClass('highlighted');
           $infoLabel.addClass('highlighted');          
+          history.pushState(null, null, '#info');
         }
 
         if ($previewSection.isOnScreen(0.5, 0.5)){
           $('.highlighted').removeClass('highlighted');
           $previewLabel.addClass('highlighted');          
+          history.pushState(null, null, '#preview');
         }
 
         if ($codeSection.isOnScreen(0.5, 0.5)){
           $('.highlighted').removeClass('highlighted');
           $codeLabel.addClass('highlighted');          
+          history.pushState(null, null, '#code');
         }
 
-        if ($introSection.isOnScreen(0.5, 0.5) || $attributionsSection.isOnScreen(0.5, 0.5) ){
+        if ($introSection.isOnScreen(0.5, 0.5)){
           $('.highlighted').removeClass('highlighted');
+          history.pushState(null, null, '#intro');
         }
 
-
+        if ($aboutSection.isOnScreen(0.5, 0.5)){
+          $('.highlighted').removeClass('highlighted');
+          history.pushState(null, null, '#about');
+        }
       });
-
-
 
       $('.shifted').each(function(index){
         var $this = $(this);
         setTimeout(function(){
           $this.removeClass("shifted").addClass('unshifted');
-        }, index * 50);       
+        }, index * 50);
       });
 
-      setTimeout(function(){
-        $('.shifted-reverse').each(function(index){
-          var $this = $(this);
-          setTimeout(function(){
-            $this.removeClass("shifted-reverse").addClass('unshifted');
-          }, index * 25);       
-        });        
-      }, 700);
-
-      $('.shifted-fast').each(function(index){
+      $('.shifted-icons').each(function(index){
         var $this = $(this);
         setTimeout(function(){
-          $this.removeClass("shifted").addClass('unshifted');
-        }, index * 55);       
+          $this.removeClass("shifted-icons").addClass('unshifted');
+        }, index * 75);
       });
 
-  });
 
-  $scope.nightmode = false;
+      if (document.body.scrollTop < 100){
+        setTimeout(function(){
+          $('.shifted-reverse').each(function(index){
+            var $this = $(this);
+            setTimeout(function(){
+              $this.removeClass("shifted-reverse").addClass('unshifted');
+            }, index * 25);       
+          });        
+        }, 700);
+      }
+      else{
+        $('.shifted-reverse').each(function(index){
+          var $this = $(this);
+          $this.removeClass("shifted-reverse").attr('opacity', 1);
 
-  var nightmodeCookie = readCookie('nightmode');
-  if (window.location.hash == '#nightmode' || nightmodeCookie == 'on'){
-    createCookie('nightmode', 'on', 365);
-    $scope.nightmode = !$scope.nightmode;
-    if(!$scope.$$phase) {
-      $scope.$apply();
+        });
+      }
+    });
+
+    $scope.nightmode = false;
+
+    var nightmodeCookie = readCookie('nightmode');
+    if (window.location.hash == '#nightmode' || nightmodeCookie == 'on'){
+      createCookie('nightmode', 'on', 365);
+      $scope.nightmode = !$scope.nightmode;
+      if(!$scope.$$phase) {
+        $scope.$apply();
+      }
+      $("*").addClass("night");
     }
-    $("*").addClass("night");
-  }
 
-  $scope.style = 'color';
-  $scope.format = 'png';
-  $scope.icon_path = 'flat-web-icon-set/color';
-  $scope.magic_icon = 'fa fa-magic';
+    $scope.style = 'color';
+    $scope.format = 'png';
+    $scope.icon_path = 'flat-web-icon-set/color';
+    $scope.magic_icon = 'fa fa-magic';
 
-  $scope.mode = 'nojs';
+    $scope.mode = 'nojs';
 
-  $scope.facebook = false;
-  $scope.twitter = false;
-  $scope.google_plus = false;
-  $scope.tumblr = false;
-  $scope.pinterest = false;
-  $scope.pocket = false;
-  $scope.reddit = false;
-  $scope.linkedin = false;
-  $scope.wordpress = false;
-  $scope.pinboard = false;
-  $scope.email = false;
+    $scope.facebook = false;
+    $scope.twitter = false;
+    $scope.google_plus = false;
+    $scope.tumblr = false;
+    $scope.pinterest = false;
+    $scope.pocket = false;
+    $scope.reddit = false;
+    $scope.linkedin = false;
+    $scope.wordpress = false;
+    $scope.pinboard = false;
+    $scope.email = false;
 
-  $scope.allnetworks = false;
+    $scope.allnetworks = false;
 
-  $scope.url = '';
-  $scope.title = '';
-  $scope.description = '';
-  $scope.twitter_handle = '';
-  $scope.preview_image_url = '';
-  $scope.preview_image_thumbnail = '/images/1px.png';
+    $scope.url = '';
+    $scope.title = '';
+    $scope.description = '';
+    $scope.twitter_handle = '';
+    $scope.preview_image_url = '';
+    $scope.preview_image_thumbnail = '/images/1px.png';
 
-  $scope.show_jsmode_instructions = false;
-  $scope.show_phpmode_instructions = false;
+    $scope.show_jsmode_instructions = false;
+    $scope.show_phpmode_instructions = false;
 
-  $scope.html = '';
-  $scope.preview_html = '';
-  $scope.original_css = 'ul.share-buttons{\n  list-style: none;\n  padding: 0;\n}\n\nul.share-buttons li{\n  display: inline;\n}';
-  $scope.css = $scope.original_css;
+    $scope.html = '';
+    $scope.preview_html = '';
+    $scope.original_css = 'ul.share-buttons{\n  list-style: none;\n  padding: 0;\n}\n\nul.share-buttons li{\n  display: inline;\n}\n\nul.share-buttons .sr-only {\n  position: absolute;\n  clip: rect(1px 1px 1px 1px);\n  clip: rect(1px, 1px, 1px, 1px);\n  padding: 0;\n  border: 0;\n  height: 1px;\n  width: 1px;\n  overflow: hidden;\n}';
+    $scope.css = $scope.original_css;
 
-  $scope.show_download = true;
-  $scope.download_url = "color.zip";
+    $scope.show_download = true;
+    $scope.download_url = "color.zip";
 
-  $scope.$watchCollection('[style, mode, facebook, twitter, google_plus, tumblr, pinterest, pocket, reddit, linkedin, wordpress, pinboard, email, url, title, description, twitter_handle, preview_image_url]', function(newValues, oldValues){
+    $scope.$watchCollection('[style, mode, facebook, twitter, google_plus, tumblr, pinterest, pocket, reddit, linkedin, wordpress, pinboard, email, url, title, description, twitter_handle, preview_image_url]', function(newValues, oldValues){
 
     if ($scope.preview_image_url.length > 5){
       $scope.preview_image_thumbnail = $scope.preview_image_url;
-      console.log($scope.preview_image_url.length + ":%20" + $scope.preview_image_thumbnail);
     }
     else{
       $scope.preview_image_thumbnail = '/images/1px.png';
@@ -215,7 +230,6 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
         $scope.$apply();
       }
     }
-
 
     switch ($scope.mode){
       case 'nojs':
@@ -236,7 +250,6 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
     if ($scope.twitter_handle != ''){
       if ($scope.twitter_handle.charAt(0) == '@'){
         $scope.twitter_handle = $scope.twitter_handle.substr(1);
-//        console.log("removed @");
         $scope.apply;
       }
       $scope.html += '&via='+ $scope.twitter_handle;
@@ -381,11 +394,7 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
               }
               $scope.html += '" target="_blank" title="Tweet" onclick="window.open(\'https://twitter.com/intent/tweet?text=\' + encodeURIComponent(document.title) + \':%20\' + encodeURIComponent(document.URL)); return false;"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i><span class="sr-only">Tweet</span></a></li>\n';
             break;
-//            case 'php':
-//            break;
           }
-
-
         break;
         case "none":
           switch ($scope.mode){
@@ -403,8 +412,6 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
               }
               $scope.html += '" target="_blank" title="Tweet" onclick="window.open(\'https://twitter.com/intent/tweet?text=\' + encodeURIComponent(document.title) + \':%20\'  + encodeURIComponent(document.URL)); return false;">Twitter</a></li>\n';       
             break;
-//            case 'php':
-//            break;
           }
         break;
         default:
@@ -427,8 +434,6 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
 
               $scope.html += '" target="_blank" title="Tweet" onclick="window.open(\'https://twitter.com/intent/tweet?text=\' + encodeURIComponent(document.title) + \':%20\'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="images/' + $scope.icon_path + '/Twitter.' + $scope.format + '"></a></li>\n';
             break;
-//            case 'php':
-//            break;
           }
         break;
       }
@@ -444,8 +449,6 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
             case 'js':
               $scope.html += '  <li><a href="https://plus.google.com/share?url=' + encodeURIComponent($scope.url.trim()) + '" target="_blank" title="Share on Google+" onclick="window.open(\'https://plus.google.com/share?url=\' + encodeURIComponent(document.URL)); return false;"><i class="fa fa-google-plus-square fa-2x" aria-hidden="true"></i><span class="sr-only">Share on Google+</span></a></li>\n';
             break;
-//            case 'php':
-//            break;
           }
         break;
         case "none":
@@ -456,8 +459,6 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
             case 'js':
               $scope.html += '  <li><a href="https://plus.google.com/share?url=' + encodeURIComponent($scope.url.trim()) + '" target="_blank" title="Share on Google+" onclick="window.open(\'https://plus.google.com/share?url=\' + encodeURIComponent(document.URL)); return false;">Google+</a></li>\n';
             break;
-//            case 'php':
-//            break;
           }
         break;
         default:
@@ -468,8 +469,6 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
             case 'js':
               $scope.html += '  <li><a href="https://plus.google.com/share?url=' + encodeURIComponent($scope.url.trim()) + '" target="_blank" title="Share on Google+" onclick="window.open(\'https://plus.google.com/share?url=\' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Google+" src="images/' + $scope.icon_path + '/Google+.' + $scope.format + '"></a></li>\n';
             break;
-//            case 'php':
-//            break;
           }
         break;
       }
@@ -485,8 +484,6 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
             case 'js':
               $scope.html += '  <li><a href="http://www.tumblr.com/share?v=3&u=' + encodeURIComponent($scope.url.trim()) + '&t=' + encodeURIComponent($scope.title.trim()) + '&s=" target="_blank" title="Post to Tumblr" onclick="window.open(\'http://www.tumblr.com/share?v=3&u=\' + encodeURIComponent(document.URL) + \'&t=\' +  encodeURIComponent(document.title)); return false;"><i class="fa fa-tumblr-square fa-2x" aria-hidden="true"></i><span class="sr-only">Post to Tumblr</span></a></li>\n';
             break;
-//            case 'php':
-//            break;
           }
         break;
         case "none":
@@ -497,8 +494,6 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
             case 'js':
               $scope.html += '  <li><a href="http://www.tumblr.com/share?v=3&u=' + encodeURIComponent($scope.url.trim()) + '&t=' + encodeURIComponent($scope.title.trim()) + '&s=" target="_blank" title="Post to Tumblr" onclick="window.open(\'http://www.tumblr.com/share?v=3&u=\' + encodeURIComponent(document.URL) + \'&t=\' +  encodeURIComponent(document.title)); return false;">Tumblr</a></li>\n';
             break;
-//            case 'php':
-//            break;
           }
         break;
         default:
@@ -509,8 +504,6 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
             case 'js':
               $scope.html += '  <li><a href="http://www.tumblr.com/share?v=3&u=' + encodeURIComponent($scope.url.trim()) + '&t=' + encodeURIComponent($scope.title.trim()) + '&s=" target="_blank" title="Post to Tumblr" onclick="window.open(\'http://www.tumblr.com/share?v=3&u=\' + encodeURIComponent(document.URL) + \'&t=\' +  encodeURIComponent(document.title)); return false;"><img alt="Post to Tumblr" src="images/' + $scope.icon_path + '/Tumblr.' + $scope.format + '"></a></li>\n';
             break;
-//            case 'php':
-//            break;
           }
         break;
       }
@@ -533,8 +526,6 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
               $scope.html += '  <li><a href="http://pinterest.com/pin/create/button/?url=' + encodeURIComponent($scope.url.trim());
               $scope.html += '&description=' + encodeURIComponent($scope.description.trim()) + '" target="_blank" title="Pin it" onclick="window.open(\'http://pinterest.com/pin/create/button/?url=\' + encodeURIComponent(document.URL) + \'&description=\' +  encodeURIComponent(document.title)); return false;"><i class="fa fa-pinterest-square fa-2x" aria-hidden="true"></i><span class="sr-only">Pin it</span></a></li>\n';
             break;
-//            case 'php':
-//            break;
           }
         break;
         case "none":
@@ -552,8 +543,6 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
               $scope.html += '  <li><a href="http://pinterest.com/pin/create/button/?url=' + encodeURIComponent($scope.url.trim());
               $scope.html += '&description=' + encodeURIComponent($scope.description.trim()) + '" target="_blank" title="Pin it" onclick="window.open(\'http://pinterest.com/pin/create/button/?url=\' + encodeURIComponent(document.URL) + \'&description=\' +  encodeURIComponent(document.title)); return false;">Pinterest</a></li>\n';
             break;
-//            case 'php':
-//            break;
           }
         break;
         default:
@@ -569,8 +558,6 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
               $scope.html += '  <li><a href="http://pinterest.com/pin/create/button/?url=' + encodeURIComponent($scope.url.trim());
               $scope.html += '&description=' + encodeURIComponent($scope.description.trim()) + '" target="_blank" title="Pin it" onclick="window.open(\'http://pinterest.com/pin/create/button/?url=\' + encodeURIComponent(document.URL) + \'&description=\' +  encodeURIComponent(document.title)); return false;"><img alt="Pin it" src="images/' + $scope.icon_path + '/Pinterest.' + $scope.format + '"></a></li>\n';
             break;
-//            case 'php':
-//            break;
           }
         break;
       }
@@ -913,7 +900,7 @@ app.directive("nightmode", function(){
   };
 });
 
-app.directive("sitesummary", function($http){
+app.directive("sitesummary", ['$http', function($http){
   return function(scope, element, attrs){
     element.bind("click", function(e){
       if (scope.url == ''){
@@ -971,7 +958,7 @@ app.directive("sitesummary", function($http){
       });
     });
   };
-});
+}]);
 
 app.directive("gototop", function(){
   return function(scope, element, attrs){
@@ -980,7 +967,6 @@ app.directive("gototop", function(){
       $('html,body').animate({
         scrollTop: 0
       }, 700);
-      //location.hash = 'top';
     });
   };
 });
@@ -1056,10 +1042,11 @@ app.directive("selectallnetworks", function(){
   };
 });
 
-app.directive("download", function(){
+app.directive("help", function(){
   return function(scope, element, attrs){
     element.bind("click", function(e){
-//      alert(scope.download_url);
+      alert(attrs.title);
+      return false;
     });
   };
 });
@@ -1067,8 +1054,11 @@ app.directive("download", function(){
 app.directive("resetcss", function(){
   return function(scope, element, attrs){
     element.bind("click", function(e){
-    scope.css = scope.original_css;
-    scope.$apply();
+      var confirmResetCSS = confirm('This is your CSS code. Would you like to reset it?');
+      if (confirmResetCSS){
+        scope.css = scope.original_css;
+        scope.$apply();
+      }
     });
   };
 });
