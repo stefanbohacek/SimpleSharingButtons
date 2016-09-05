@@ -431,7 +431,8 @@ img.night,
 #tip-me button.night,
 #tip-me button strong.night,
 p.instructions.night,
-p.instructions.night a.night {
+p.instructions.night a.night,
+p.instructions.night strong {
   background: #636363 !important;
 }
 label.infield.night,
