@@ -92,41 +92,41 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
         if ($styleSection.isOnScreen(0.5, 0.5)){
           $('.highlighted').removeClass('highlighted');
           $styleLabel.addClass('highlighted');
-          history.pushState(null, null, '#style');
+          history.replaceState(null, null, '#style');
         }
 
         if ($networksSection.isOnScreen(0.5, 0.5)){
           $('.highlighted').removeClass('highlighted');
           $networksLabel.addClass('highlighted');          
-          history.pushState(null, null, '#networks');
+          history.replaceState(null, null, '#networks');
         }
 
         if ($infoSection.isOnScreen(0.5, 0.5)){
           $('.highlighted').removeClass('highlighted');
           $infoLabel.addClass('highlighted');          
-          history.pushState(null, null, '#info');
+          history.replaceState(null, null, '#info');
         }
 
         if ($previewSection.isOnScreen(0.5, 0.5)){
           $('.highlighted').removeClass('highlighted');
           $previewLabel.addClass('highlighted');          
-          history.pushState(null, null, '#preview');
+          history.replaceState(null, null, '#preview');
         }
 
         if ($codeSection.isOnScreen(0.5, 0.5)){
           $('.highlighted').removeClass('highlighted');
           $codeLabel.addClass('highlighted');          
-          history.pushState(null, null, '#code');
+          history.replaceState(null, null, '#code');
         }
 
         if ($introSection.isOnScreen(0.5, 0.5)){
           $('.highlighted').removeClass('highlighted');
-          history.pushState(null, null, '#intro');
+          history.replaceState(null, null, '#intro');
         }
 
         if ($aboutSection.isOnScreen(0.5, 0.5)){
           $('.highlighted').removeClass('highlighted');
-          history.pushState(null, null, '#about');
+          history.replaceState(null, null, '#about');
         }
       });
 
@@ -872,7 +872,7 @@ app.directive("goto", function(){
       $('html,body').animate({
         scrollTop: $('#' + attrs.goto).offset().top
       }, 700);
-//      location.hash = attrs.goto;
+      history.pushState(null, null, '#' + attrs.goto);
     });
   };
 });
