@@ -70,8 +70,13 @@ nav {
   background: rgba(255, 255, 255, 0.9);
   z-index: 100;
 }
+@media (max-width: 1110px) {
+  nav {
+    padding: 10px 0;
+  }
+}
 .share-buttons-margin {
-  margin: 5em 0 3em !important;
+  margin: 2em 0 3em !important;
 }
 .share-buttons,
 nav ul {
@@ -382,6 +387,15 @@ input {
   line-height: 3.2em;
   font-style: italic;
 }
+p.try-it {
+  font-family: 'Sue Ellen Francisco', cursive;
+  font-size: 1.8em;
+  margin-bottom: 0;
+  text-align: center;
+  -webkit-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+}
 .help {
   cursor: help;
 }
@@ -469,6 +483,11 @@ input.night {
 }
 .pull-left li {
   padding: 0 0.5em;
+}
+@media (max-width: 1110px) {
+  .pull-left li {
+    padding: 0 5px;
+  }
 }
 .pull-right {
   float: right;
