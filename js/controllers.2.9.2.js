@@ -92,41 +92,55 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
         if ($styleSection.isOnScreen(0.5, 0.5)){
           $('.highlighted').removeClass('highlighted');
           $styleLabel.addClass('highlighted');
-          history.pushState(null, null, '#style');
+          if (history.replaceState) {
+            history.replaceState(null, null, '#style');
+          }
         }
 
         if ($networksSection.isOnScreen(0.5, 0.5)){
           $('.highlighted').removeClass('highlighted');
           $networksLabel.addClass('highlighted');          
-          history.pushState(null, null, '#networks');
+          if (history.replaceState) {
+            history.replaceState(null, null, '#networks');
+          }
         }
 
         if ($infoSection.isOnScreen(0.5, 0.5)){
           $('.highlighted').removeClass('highlighted');
           $infoLabel.addClass('highlighted');          
-          history.pushState(null, null, '#info');
+          if (history.replaceState) {
+            history.replaceState(null, null, '#info');
+          }
         }
 
         if ($previewSection.isOnScreen(0.5, 0.5)){
           $('.highlighted').removeClass('highlighted');
           $previewLabel.addClass('highlighted');          
-          history.pushState(null, null, '#preview');
+          if (history.replaceState) {
+            history.replaceState(null, null, '#preview');
+          }
         }
 
         if ($codeSection.isOnScreen(0.5, 0.5)){
           $('.highlighted').removeClass('highlighted');
           $codeLabel.addClass('highlighted');          
-          history.pushState(null, null, '#code');
+          if (history.replaceState) {
+            history.replaceState(null, null, '#code');
+          }
         }
 
         if ($introSection.isOnScreen(0.5, 0.5)){
           $('.highlighted').removeClass('highlighted');
-          history.pushState(null, null, '#intro');
+          if (history.replaceState) {
+            history.replaceState(null, null, '#intro');
+          }
         }
 
         if ($aboutSection.isOnScreen(0.5, 0.5)){
           $('.highlighted').removeClass('highlighted');
-          history.pushState(null, null, '#about');
+          if (history.replaceState) {
+            history.replaceState(null, null, '#about');
+          }
         }
       });
 
@@ -872,7 +886,9 @@ app.directive("goto", function(){
       $('html,body').animate({
         scrollTop: $('#' + attrs.goto).offset().top
       }, 700);
-//      location.hash = attrs.goto;
+      if (history.pushState){
+        history.pushState(null, null, '#' + attrs.goto);        
+      }
     });
   };
 });
