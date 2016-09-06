@@ -70,6 +70,11 @@ nav {
   background: rgba(255, 255, 255, 0.9);
   z-index: 100;
 }
+@media (max-width: 1110px) {
+  nav {
+    padding: 10px 0;
+  }
+}
 .share-buttons-margin {
   margin: 5em 0 3em !important;
 }
@@ -431,7 +436,8 @@ img.night,
 #tip-me button.night,
 #tip-me button strong.night,
 p.instructions.night,
-p.instructions.night a.night {
+p.instructions.night a.night,
+p.instructions.night strong {
   background: #636363 !important;
 }
 label.infield.night,
@@ -468,6 +474,11 @@ input.night {
 }
 .pull-left li {
   padding: 0 0.5em;
+}
+@media (max-width: 1110px) {
+  .pull-left li {
+    padding: 0 5px;
+  }
 }
 .pull-right {
   float: right;
