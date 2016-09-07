@@ -84,10 +84,20 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
         $previewSection = $('section#preview'),
         $codeSection = $('section#code'),
         $introSection = $('section#intro'),
-        $aboutSection = $('section#about');
+        $aboutSection = $('section#about'),
+        $backToTop = $('a.back-to-top');
 
       $(window).scroll(function() {
         //$('.highlighted').removeClass('highlighted');
+
+        if (document.body.scrollTop > (screen.height/2)){
+          $backToTop.addClass('back-to-top-visible');
+          $backToTop.removeClass('back-to-top-hidden');
+        }
+        else{
+          $backToTop.removeClass('back-to-top-visible');
+          $backToTop.addClass('back-to-top-hidden');          
+        }
 
         if ($styleSection.isOnScreen(0.5, 0.5)){
           $('.highlighted').removeClass('highlighted');
@@ -920,7 +930,7 @@ app.directive("sitesummary", ['$http', function($http){
   return function(scope, element, attrs){
     element.bind("click", function(e){
       if (scope.url == ''){
-        alert("Please fill in the URL of your page");
+        alert("Please fill in the URL of your page, after that you can fill the site information automatically!");
         return;
       }
       if (scope.url.indexOf('http://') == -1 && scope.url.indexOf('https://') == -1){

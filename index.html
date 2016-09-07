@@ -28,7 +28,7 @@
   <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  <link rel="stylesheet" href="css/main.2.9.4.min.css">
+  <link rel="stylesheet" href="css/main.2.9.5.min.css">
   <link href='https://fonts.googleapis.com/css?family=Merriweather+Sans|Fjalla+One' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Sue+Ellen+Francisco&amp;text=Tryit,sharethispage:' rel='stylesheet' type='text/css'>
   <link href="https://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
@@ -168,12 +168,16 @@
         <input type="radio" id="modenojs" name="mode" ng-model="mode" value="nojs" checked="checked">
         <label for="modenojs">No JavaScript <sup help class="help" title="Default setting. No JavaScript will be used"> ? </sup></label>
         <input type="radio" id="modejs" name="mode" ng-model="mode" value="js">
-        <label for="modejs">JavaScript <sup help class="help" title="This will let you reuse the code across several pages. URL and page title will be automatically detected with JavaScript on each page. Good for blogs."); return false;"> ? </sup></label>
+        <label for="modejs">JavaScript <sup help class="help" title="JavaScript will be used to detect site information automatically, so that you can add the same code on multiple pages, for example on a blog."); return false;"> ? </sup></label>
   <!--
         <input type="radio" id="modephp" name="mode" ng-model="mode" value="php">
         <label for="modephp">PHP <sup><strong> BETA </strong></sup></label>
   -->
       </form>
+      <div class="instructions">
+        <p>Choose <strong>JavaScript</strong> if you want to include the buttons on multiple pages, otherwise you can fill out the information below.</p>
+        <p><strong>Hint:</strong> Once you add the URL, use the <i class="fa fa-magic"></i> icon to detect the information automatically.</p>
+      </div>
       <p class="instructions" ng-show="show_fb_instructions"><strong>Note:</strong> Facebook <a href="https://developers.facebook.com/bugs/357750474364812/" target="_blank">no longer accepts custom parameters</a>, please use <a href="http://ogp.me/" target="_blank">Open Graph</a> instead.</p>
       <p class="instructions mode-instructions" ng-show="show_jsmode_instructions"><strong>Note:</strong> Please set the "URL of your page" below to your home page. This will be a fallback URL when your visitor's JavaScript is disabled.</p>
       <p class="instructions mode-instructions" ng-show="show_php_instructions"><strong>Note:</strong> ???</p>
@@ -203,7 +207,6 @@
         <p class="instructions">* The optional image preview is used with Pinterest and Wordpress. If you want to control which image is used by Facebook, Twitter, and Google+, read about <a target="_blank" href="http://ogp.me/">Open Graph</a>, <a target="_blank" href="https://dev.twitter.com/cards/markup">Twitter Card Tags</a> and <a target="_blank" href="https://developers.google.com/+/web/snippet/">Schema.org microdata</a>.</p>
         <div class="preview-image-wrapper">
           <img title="Image preview" ng-src="{{preview_image_thumbnail}}">
-
         </div>
         </li>
         </ul>
@@ -278,8 +281,14 @@
 
       <p><strong>Simple Sharing Buttons Generator</strong> is an <a href="https://github.com/fourtonfish/SimpleSharingButtons" target="_blank">open source</a> tool made by <a href="https://twitter.com/fourtonfish/" target="_blank">@fourtonfish</a> that lets your create <a href="http://www.ericmobley.net/social-media-share-buttons-impact-on-performance/" target="_blank">light-weight</a> sharing buttons for social networks, including Twitter, Facebook, or Google+, that <a href="http://zurb.com/article/883/small-painful-buttons-why-social-media-bu" target="_blank"><strong>speed up your website</strong></a> by avoiding downloading <a href="http://www.benmarshall.me/sharethis-slowing-down-site/" target="_blank">unnecessary JavaScript files</a> and they <a href="http://en.wikipedia.org/wiki/Facebook_like_button#Privacy_issues" target="_blank">keep your user's activity private</a>.</p>
       <p>You can choose from <a goto="style" href="#style" onclick="return false;">several styles</a>, including SVG images and <a href="http://fontawesome.io/" target="_blank"><strong>Font Awesome</strong></a>. This is site is <strong>free to use</strong>, check out above for <a href="#code" goto="code">donation options</a>.</p>
-      <p>For more information, <a href="http://blog.fourtonfish.com/simple-sharing-buttons">check out my blog</a>!</p>
-      <p class="hashtags"><a href="https://twitter.com/hashtag/indieweb" target="_blank">#indieweb</a> <a href="https://twitter.com/hashtag/openweb" target="_blank">#openweb</a></p>
+      <p>For more information, see also:</p>
+      <ul>
+        <li><a href="http://blog.fourtonfish.com/simple-sharing-buttons">my blog</a></li>
+        <li><a href="http://technical.ly/brooklyn/2016/09/06/simple-sharing-buttons-generator-stefan-bohacek/">technical.ly</a></li>
+        <li><a href="http://www.hongkiat.com/blog/wordpress-speed-optimization-social-sharing-icons/">hongkiat.com</a></li>
+        <li><a href="https://www.producthunt.com/tech/simple-sharing-buttons-generator">Product Hunt</a></li>
+        <li><a href="http://blog.simplesharingbuttons.com/">official blog with updates</a></li>
+
       <h3>Attributions</h3>
       <ul>
         <li>
@@ -295,12 +304,14 @@
           <a href="http://www.aha-soft.com/" target="_blank">Aha-Soft</a>, the creators of the <a href="https://www.iconfinder.com/iconsets/social-flat-rounded-rects" target="_blank">Social Flat Rounded Rects</a> icon set
         </li>
       </ul>
-      <a gototop class="next" href="#"><i class="fa fa-hand-o-right"></i>Back to top</a>
+      <a gototop class="back-to-top" href="#"><i class="fa fa-hand-o-right"></i>Back to top</a>
+      <p class="hashtags">by <a href="https://twitter.com/fourtonfish/">@fourtonfish</a> <a href="https://twitter.com/hashtag/indieweb" target="_blank">#indieweb</a> <a href="https://twitter.com/hashtag/openweb" target="_blank">#openweb</a></p>
+
     </div>
   </section>
 <script defer src="libs/jquery.min.js"></script>
 <script defer src="libs/angular.min.js"></script>
-<script defer src="js/controllers.2.9.2.min.js"></script>
+<script defer src="js/controllers.2.9.3.min.js"></script>
 <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-39782822-3', 'auto');ga('require', 'displayfeatures');ga('send', 'pageview');</script>
 <script type="text/javascript">var sc_project=9860614;var sc_invisible=1;var sc_security="58a35609";var scJsHost = (("https:" == document.location.protocol) ? "https://secure." : "http://www.");document.write("<sc"+"ript async type='text/javascript' src='" +scJsHost+"statcounter.com/counter/counter.js'></"+"script>");</script><noscript><div class="statcounter"><a title="site stats" href="http://statcounter.com/" target="_blank"><img class="statcounter" src="http://c.statcounter.com/9860614/0/58a35609/1/" alt="site stats"></a></div></noscript>
 </body>
