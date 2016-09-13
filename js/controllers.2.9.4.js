@@ -1,3 +1,28 @@
+// requestAnimationFrame polyfill by Erik Möller. fixes from Paul Irish and Tino Zijdel
+(function() {
+  var lastTime = 0;
+  var vendors = ['ms', 'moz', 'webkit', 'o'];
+  for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+    window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+    window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] 
+                                 || window[vendors[x]+'CancelRequestAnimationFrame'];
+  }
+  if (!window.requestAnimationFrame)
+    window.requestAnimationFrame = function(callback, element) {
+      var currTime = new Date().getTime();
+      var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+      var id = window.setTimeout(function() { callback(currTime + timeToCall); }, 
+        timeToCall);
+      lastTime = currTime + timeToCall;
+      return id;
+    };
+
+  if (!window.cancelAnimationFrame)
+    window.cancelAnimationFrame = function(id) {
+      clearTimeout(id);
+    };
+}());
+
 /*
 http://www.quirksmode.org/js/cookies.html
 Note to self: angularize this later.
@@ -87,10 +112,18 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
         $aboutSection = $('section#about'),
         $backToTop = $('a.back-to-top');
 
-      $(window).scroll(function() {
-        //$('.highlighted').removeClass('highlighted');
+    var lastScrollY = 0,
+        documentScrollTop = 0,
+        ticking = false;
 
-        if (document.body.scrollTop > (screen.height/2)){
+    // TODO: Why is there a different indent?
+
+      function update() {
+        //$('.highlighted').removeClass('highlighted');
+        documentScrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        lastScrollY = window.scrollY;
+
+        if (documentScrollTop > (screen.height/2)){
           $backToTop.addClass('back-to-top-visible');
           $backToTop.removeClass('back-to-top-hidden');
         }
@@ -152,6 +185,21 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
             history.replaceState(null, null, '#about');
           }
         }
+        ticking = false;
+      }
+
+      function requestTick() {
+        if(!ticking) {
+          requestAnimationFrame(update);
+          ticking = true;
+        }
+      }
+
+
+
+      $(window).scroll(function() {
+        lastScrollY = window.scrollY;
+        requestTick();
       });
 
       $('.shifted').each(function(index){
@@ -169,7 +217,7 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
       });
 
 
-      if (document.body.scrollTop < 100){
+      if (documentScrollTop < 100){
         setTimeout(function(){
           $('.shifted-reverse').each(function(index){
             var $this = $(this);
