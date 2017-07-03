@@ -281,7 +281,7 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
 
     $scope.html = '';
     $scope.preview_html = '';
-    $scope.original_css = 'ul.share-buttons{\n  list-style: none;\n  padding: 0;\n}\n\nul.share-buttons li{\n  display: inline;\n}\n\nul.share-buttons .sr-only {\n  position: absolute;\n  clip: rect(1px 1px 1px 1px);\n  clip: rect(1px, 1px, 1px, 1px);\n  padding: 0;\n  border: 0;\n  height: 1px;\n  width: 1px;\n  overflow: hidden;\n}';
+    $scope.original_css = 'ul.share-buttons{\n  list-style: none;\n  padding: 0;\n}\n\nul.share-buttons li{\n  display: inline;\n}\n\nul.share-buttons .sr-only{\n  position: absolute;\n  clip: rect(1px 1px 1px 1px);\n  clip: rect(1px, 1px, 1px, 1px);\n  padding: 0;\n  border: 0;\n  height: 1px;\n  width: 1px;\n  overflow: hidden;\n}';
     $scope.css = $scope.original_css;
 
     $scope.show_download = true;
@@ -436,10 +436,10 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
         default:
           switch ($scope.mode){
             case 'nojs':
-              $scope.html += '  <li><a href="https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent($scope.url.trim()) + '&t=' +  encodeURIComponent($scope.title.trim()) +'" title="Share on Facebook" target="_blank"><img alt="Share on Facebook" src="images/' + $scope.icon_path + '/Facebook.' + $scope.format + '"></a></li>\n';
+              $scope.html += '  <li><a href="https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent($scope.url.trim()) + '&t=' +  encodeURIComponent($scope.title.trim()) +'" title="Share on Facebook" target="_blank"><img alt="Share on Facebook" src="images/' + $scope.icon_path + '/Facebook.' + $scope.format + '" /></a></li>\n';
             break;
             case 'js':
-              $scope.html += '  <li><a href="https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent($scope.url.trim()) + '&t=' +  encodeURIComponent($scope.title.trim()) +'" title="Share on Facebook" target="_blank" onclick="window.open(\'https://www.facebook.com/sharer/sharer.php?u=\' + encodeURIComponent(document.URL) + \'&t=\' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="images/' + $scope.icon_path + '/Facebook.' + $scope.format + '"></a></li>\n';
+              $scope.html += '  <li><a href="https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent($scope.url.trim()) + '&t=' +  encodeURIComponent($scope.title.trim()) +'" title="Share on Facebook" target="_blank" onclick="window.open(\'https://www.facebook.com/sharer/sharer.php?u=\' + encodeURIComponent(document.URL) + \'&t=\' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="images/' + $scope.icon_path + '/Facebook.' + $scope.format + '" /></a></li>\n';
             break;
 //            case 'php':
 //            break;
@@ -495,7 +495,7 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
                 $scope.html += '&via='+ $scope.twitter_handle;
               }
 
-              $scope.html += '" target="_blank" title="Tweet"><img alt="Tweet" src="images/' + $scope.icon_path + '/Twitter.' + $scope.format + '"></a></li>\n';
+              $scope.html += '" target="_blank" title="Tweet"><img alt="Tweet" src="images/' + $scope.icon_path + '/Twitter.' + $scope.format + '" /></a></li>\n';
             break;
             case 'js':
               $scope.html += '  <li><a href="https://twitter.com/intent/tweet?source=' + encodeURIComponent($scope.url.trim()) + '&text='+ encodeURIComponent($scope.title.trim()) + ':%20' + encodeURIComponent($scope.url.trim());
@@ -504,7 +504,7 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
                 $scope.html += '&via='+ $scope.twitter_handle;
               }
 
-              $scope.html += '" target="_blank" title="Tweet" onclick="window.open(\'https://twitter.com/intent/tweet?text=\' + encodeURIComponent(document.title) + \':%20\'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="images/' + $scope.icon_path + '/Twitter.' + $scope.format + '"></a></li>\n';
+              $scope.html += '" target="_blank" title="Tweet" onclick="window.open(\'https://twitter.com/intent/tweet?text=\' + encodeURIComponent(document.title) + \':%20\'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="images/' + $scope.icon_path + '/Twitter.' + $scope.format + '" /></a></li>\n';
             break;
           }
         break;
@@ -536,10 +536,10 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
         default:
           switch ($scope.mode){
             case 'nojs':
-              $scope.html += '  <li><a href="https://plus.google.com/share?url=' + encodeURIComponent($scope.url.trim()) + '" target="_blank" title="Share on Google+"><img alt="Share on Google+" src="images/' + $scope.icon_path + '/Google+.' + $scope.format + '"></a></li>\n';
+              $scope.html += '  <li><a href="https://plus.google.com/share?url=' + encodeURIComponent($scope.url.trim()) + '" target="_blank" title="Share on Google+"><img alt="Share on Google+" src="images/' + $scope.icon_path + '/Google+.' + $scope.format + '" /></a></li>\n';
             break;
             case 'js':
-              $scope.html += '  <li><a href="https://plus.google.com/share?url=' + encodeURIComponent($scope.url.trim()) + '" target="_blank" title="Share on Google+" onclick="window.open(\'https://plus.google.com/share?url=\' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Google+" src="images/' + $scope.icon_path + '/Google+.' + $scope.format + '"></a></li>\n';
+              $scope.html += '  <li><a href="https://plus.google.com/share?url=' + encodeURIComponent($scope.url.trim()) + '" target="_blank" title="Share on Google+" onclick="window.open(\'https://plus.google.com/share?url=\' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Google+" src="images/' + $scope.icon_path + '/Google+.' + $scope.format + '" /></a></li>\n';
             break;
           }
         break;
@@ -571,10 +571,10 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
         default:
           switch ($scope.mode){
             case 'nojs':
-              $scope.html += '  <li><a href="http://www.tumblr.com/share?v=3&u=' + encodeURIComponent($scope.url.trim()) + '&t=' + encodeURIComponent($scope.title.trim()) + '&s=" target="_blank" title="Post to Tumblr"><img alt="Post to Tumblr" src="images/' + $scope.icon_path + '/Tumblr.' + $scope.format + '"></a></li>\n';
+              $scope.html += '  <li><a href="http://www.tumblr.com/share?v=3&u=' + encodeURIComponent($scope.url.trim()) + '&t=' + encodeURIComponent($scope.title.trim()) + '&s=" target="_blank" title="Post to Tumblr"><img alt="Post to Tumblr" src="images/' + $scope.icon_path + '/Tumblr.' + $scope.format + '" /></a></li>\n';
             break;
             case 'js':
-              $scope.html += '  <li><a href="http://www.tumblr.com/share?v=3&u=' + encodeURIComponent($scope.url.trim()) + '&t=' + encodeURIComponent($scope.title.trim()) + '&s=" target="_blank" title="Post to Tumblr" onclick="window.open(\'http://www.tumblr.com/share?v=3&u=\' + encodeURIComponent(document.URL) + \'&t=\' +  encodeURIComponent(document.title)); return false;"><img alt="Post to Tumblr" src="images/' + $scope.icon_path + '/Tumblr.' + $scope.format + '"></a></li>\n';
+              $scope.html += '  <li><a href="http://www.tumblr.com/share?v=3&u=' + encodeURIComponent($scope.url.trim()) + '&t=' + encodeURIComponent($scope.title.trim()) + '&s=" target="_blank" title="Post to Tumblr" onclick="window.open(\'http://www.tumblr.com/share?v=3&u=\' + encodeURIComponent(document.URL) + \'&t=\' +  encodeURIComponent(document.title)); return false;"><img alt="Post to Tumblr" src="images/' + $scope.icon_path + '/Tumblr.' + $scope.format + '" /></a></li>\n';
             break;
           }
         break;
@@ -624,11 +624,11 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
               if ($scope.preview_image_url != ''){
                 $scope.html += '&media=' + $scope.preview_image_url;
               }
-              $scope.html += '&description=' + encodeURIComponent($scope.description.trim()) + '" target="_blank" title="Pin it"><img alt="Pin it" src="images/' + $scope.icon_path + '/Pinterest.' + $scope.format + '"></a></li>\n';
+              $scope.html += '&description=' + encodeURIComponent($scope.description.trim()) + '" target="_blank" title="Pin it"><img alt="Pin it" src="images/' + $scope.icon_path + '/Pinterest.' + $scope.format + '" /></a></li>\n';
             break;
             case 'js':
               $scope.html += '  <li><a href="http://pinterest.com/pin/create/button/?url=' + encodeURIComponent($scope.url.trim());
-              $scope.html += '&description=' + encodeURIComponent($scope.description.trim()) + '" target="_blank" title="Pin it" onclick="window.open(\'http://pinterest.com/pin/create/button/?url=\' + encodeURIComponent(document.URL) + \'&description=\' +  encodeURIComponent(document.title)); return false;"><img alt="Pin it" src="images/' + $scope.icon_path + '/Pinterest.' + $scope.format + '"></a></li>\n';
+              $scope.html += '&description=' + encodeURIComponent($scope.description.trim()) + '" target="_blank" title="Pin it" onclick="window.open(\'http://pinterest.com/pin/create/button/?url=\' + encodeURIComponent(document.URL) + \'&description=\' +  encodeURIComponent(document.title)); return false;"><img alt="Pin it" src="images/' + $scope.icon_path + '/Pinterest.' + $scope.format + '" /></a></li>\n';
             break;
           }
         break;
@@ -668,10 +668,10 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
         default:
           switch ($scope.mode){
             case 'nojs':
-              $scope.html += '  <li><a href="https://getpocket.com/save?url=' + encodeURIComponent($scope.url.trim()) + '&title=' + encodeURIComponent($scope.title.trim()) + '" target="_blank" title="Add to Pocket"><img alt="Add to Pocket" src="images/' + $scope.icon_path + '/Pocket.' + $scope.format + '"></a></li>\n';
+              $scope.html += '  <li><a href="https://getpocket.com/save?url=' + encodeURIComponent($scope.url.trim()) + '&title=' + encodeURIComponent($scope.title.trim()) + '" target="_blank" title="Add to Pocket"><img alt="Add to Pocket" src="images/' + $scope.icon_path + '/Pocket.' + $scope.format + '" /></a></li>\n';
             break;
             case 'js':
-              $scope.html += '  <li><a href="https://getpocket.com/save?url=' + encodeURIComponent($scope.url.trim()) + '&title=' + encodeURIComponent($scope.title.trim()) + '" target="_blank" title="Add to Pocket" onclick="window.open(\'https://getpocket.com/save?url=\' + encodeURIComponent(document.URL) + \'&title=\' +  encodeURIComponent(document.title)); return false;"><img alt="Add to Pocket" src="images/' + $scope.icon_path + '/Pocket.' + $scope.format + '"></a></li>\n';
+              $scope.html += '  <li><a href="https://getpocket.com/save?url=' + encodeURIComponent($scope.url.trim()) + '&title=' + encodeURIComponent($scope.title.trim()) + '" target="_blank" title="Add to Pocket" onclick="window.open(\'https://getpocket.com/save?url=\' + encodeURIComponent(document.URL) + \'&title=\' +  encodeURIComponent(document.title)); return false;"><img alt="Add to Pocket" src="images/' + $scope.icon_path + '/Pocket.' + $scope.format + '" /></a></li>\n';
             break;
 //            case 'php':
 //            break;
@@ -709,10 +709,10 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
         default:
           switch ($scope.mode){
             case 'nojs':
-              $scope.html += '  <li><a href="http://www.reddit.com/submit?url=' + encodeURIComponent($scope.url.trim()) + '&title=' + encodeURIComponent($scope.title.trim()) + '" target="_blank" title="Submit to Reddit"><img alt="Submit to Reddit" src="images/' + $scope.icon_path + '/Reddit.' + $scope.format + '"></a></li>\n';
+              $scope.html += '  <li><a href="http://www.reddit.com/submit?url=' + encodeURIComponent($scope.url.trim()) + '&title=' + encodeURIComponent($scope.title.trim()) + '" target="_blank" title="Submit to Reddit"><img alt="Submit to Reddit" src="images/' + $scope.icon_path + '/Reddit.' + $scope.format + '" /></a></li>\n';
             break;
             case 'js':
-              $scope.html += '  <li><a href="http://www.reddit.com/submit?url=' + encodeURIComponent($scope.url.trim()) + '&title=' + encodeURIComponent($scope.title.trim()) + '" target="_blank" title="Submit to Reddit" onclick="window.open(\'http://www.reddit.com/submit?url=\' + encodeURIComponent(document.URL) + \'&title=\' +  encodeURIComponent(document.title)); return false;"><img alt="Submit to Reddit" src="images/' + $scope.icon_path + '/Reddit.' + $scope.format + '"></a></li>\n';
+              $scope.html += '  <li><a href="http://www.reddit.com/submit?url=' + encodeURIComponent($scope.url.trim()) + '&title=' + encodeURIComponent($scope.title.trim()) + '" target="_blank" title="Submit to Reddit" onclick="window.open(\'http://www.reddit.com/submit?url=\' + encodeURIComponent(document.URL) + \'&title=\' +  encodeURIComponent(document.title)); return false;"><img alt="Submit to Reddit" src="images/' + $scope.icon_path + '/Reddit.' + $scope.format + '" /></a></li>\n';
             break;
 //            case 'php':
 //            break;
@@ -750,10 +750,10 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
         default:
           switch ($scope.mode){
             case 'nojs':
-              $scope.html += '  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent($scope.url.trim()) + '&title=' + encodeURIComponent($scope.title.trim()) + '&summary=' + encodeURIComponent($scope.description.trim()) + '&source=' + encodeURIComponent($scope.url.trim()) + '" target="_blank" title="Share on LinkedIn"><img alt="Share on LinkedIn" src="images/' + $scope.icon_path + '/LinkedIn.' + $scope.format + '"></a></li>\n';
+              $scope.html += '  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent($scope.url.trim()) + '&title=' + encodeURIComponent($scope.title.trim()) + '&summary=' + encodeURIComponent($scope.description.trim()) + '&source=' + encodeURIComponent($scope.url.trim()) + '" target="_blank" title="Share on LinkedIn"><img alt="Share on LinkedIn" src="images/' + $scope.icon_path + '/LinkedIn.' + $scope.format + '" /></a></li>\n';
             break;
             case 'js':
-              $scope.html += '  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent($scope.url.trim()) + '&title=' + encodeURIComponent($scope.title.trim()) + '&summary=' + encodeURIComponent($scope.description.trim()) + '&source=' + encodeURIComponent($scope.url.trim()) + '" target="_blank" title="Share on LinkedIn" onclick="window.open(\'http://www.linkedin.com/shareArticle?mini=true&url=\' + encodeURIComponent(document.URL) + \'&title=\' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="images/' + $scope.icon_path + '/LinkedIn.' + $scope.format + '"></a></li>\n';
+              $scope.html += '  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent($scope.url.trim()) + '&title=' + encodeURIComponent($scope.title.trim()) + '&summary=' + encodeURIComponent($scope.description.trim()) + '&source=' + encodeURIComponent($scope.url.trim()) + '" target="_blank" title="Share on LinkedIn" onclick="window.open(\'http://www.linkedin.com/shareArticle?mini=true&url=\' + encodeURIComponent(document.URL) + \'&title=\' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="images/' + $scope.icon_path + '/LinkedIn.' + $scope.format + '" /></a></li>\n';
             break;
 //            case 'php':
 //            break;
@@ -811,11 +811,11 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
                 $scope.html += '&i=' + $scope.preview_image_url;
               }
 
-              $scope.html += '" target="_blank" title="Publish on WordPress"><img alt="Publish on WordPress" src="images/' + $scope.icon_path + '/Wordpress.' + $scope.format + '"></a></li>\n';
+              $scope.html += '" target="_blank" title="Publish on WordPress"><img alt="Publish on WordPress" src="images/' + $scope.icon_path + '/Wordpress.' + $scope.format + '" /></a></li>\n';
             break;
             case 'js':
               $scope.html += '  <li><a href="http://wordpress.com/press-this.php?u=' + encodeURIComponent($scope.url.trim()) + '&t=' + encodeURIComponent($scope.title.trim()) + '&s=' + encodeURIComponent($scope.description.trim());
-              $scope.html += '" target="_blank" title="Publish on WordPress" onclick="window.open(\'http://wordpress.com/press-this.php?u=\' + encodeURIComponent(document.URL) + \'&t=\' +  encodeURIComponent(document.title)); return false;"><img alt="Publish on WordPress" src="images/' + $scope.icon_path + '/Wordpress.' + $scope.format + '"></a></li>\n';
+              $scope.html += '" target="_blank" title="Publish on WordPress" onclick="window.open(\'http://wordpress.com/press-this.php?u=\' + encodeURIComponent(document.URL) + \'&t=\' +  encodeURIComponent(document.title)); return false;"><img alt="Publish on WordPress" src="images/' + $scope.icon_path + '/Wordpress.' + $scope.format + '" /></a></li>\n';
             break;
 //            case 'php':
 //            break;
@@ -855,10 +855,10 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
         default:
           switch ($scope.mode){
             case 'nojs':
-              $scope.html += '  <li><a href="https://pinboard.in/popup_login/?url=' + encodeURIComponent($scope.url.trim()) + '&title=' + encodeURIComponent($scope.title.trim()) + '&description=' + encodeURIComponent($scope.description.trim()) + '" target="_blank" title="Save to Pinboard"><img alt="Save to Pinboard" src="images/' + $scope.icon_path + '/Pinboard.' + $scope.format + '"></a></li>\n';
+              $scope.html += '  <li><a href="https://pinboard.in/popup_login/?url=' + encodeURIComponent($scope.url.trim()) + '&title=' + encodeURIComponent($scope.title.trim()) + '&description=' + encodeURIComponent($scope.description.trim()) + '" target="_blank" title="Save to Pinboard"><img alt="Save to Pinboard" src="images/' + $scope.icon_path + '/Pinboard.' + $scope.format + '" /></a></li>\n';
             break;
             case 'js':
-              $scope.html += '  <li><a href="https://pinboard.in/popup_login/?url=' + encodeURIComponent($scope.url.trim()) + '&title=' + encodeURIComponent($scope.title.trim()) + '&description=' + encodeURIComponent($scope.description.trim()) + '" target="_blank" title="Save to Pinboard" onclick="window.open(\'https://pinboard.in/popup_login/?url=\' + encodeURIComponent(document.URL) + \'&title=\' +  encodeURIComponent(document.title)); return false;"><img alt="Save to Pinboard" src="images/' + $scope.icon_path + '/Pinboard.' + $scope.format + '"></a></li>\n';
+              $scope.html += '  <li><a href="https://pinboard.in/popup_login/?url=' + encodeURIComponent($scope.url.trim()) + '&title=' + encodeURIComponent($scope.title.trim()) + '&description=' + encodeURIComponent($scope.description.trim()) + '" target="_blank" title="Save to Pinboard" onclick="window.open(\'https://pinboard.in/popup_login/?url=\' + encodeURIComponent(document.URL) + \'&title=\' +  encodeURIComponent(document.title)); return false;"><img alt="Save to Pinboard" src="images/' + $scope.icon_path + '/Pinboard.' + $scope.format + '" /></a></li>\n';
             break;
 //            case 'php':
 //            break;
@@ -896,10 +896,10 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
         default:
           switch ($scope.mode){
             case 'nojs':
-              $scope.html += '  <li><a href="mailto:?subject=' + encodeURIComponent($scope.title.trim()) + '&body=' + encodeURIComponent($scope.description.trim()) + ':%20' + encodeURIComponent($scope.url.trim()) + '" target="_blank" title="Send email"><img alt="Send email" src="images/' + $scope.icon_path + '/Email.' + $scope.format + '"></a></li>\n';
+              $scope.html += '  <li><a href="mailto:?subject=' + encodeURIComponent($scope.title.trim()) + '&body=' + encodeURIComponent($scope.description.trim()) + ':%20' + encodeURIComponent($scope.url.trim()) + '" target="_blank" title="Send email"><img alt="Send email" src="images/' + $scope.icon_path + '/Email.' + $scope.format + '" /></a></li>\n';
             break;
             case 'js':
-              $scope.html += '  <li><a href="mailto:?subject=' + encodeURIComponent($scope.title.trim()) + '&body=' + encodeURIComponent($scope.description.trim()) + ':%20' + encodeURIComponent($scope.url.trim()) + '" target="_blank" title="Send email" onclick="window.open(\'mailto:?subject=\' + encodeURIComponent(document.title) + \'&body=\' +  encodeURIComponent(document.URL)); return false;"><img alt="Send email" src="images/' + $scope.icon_path + '/Email.' + $scope.format + '"></a></li>\n';
+              $scope.html += '  <li><a href="mailto:?subject=' + encodeURIComponent($scope.title.trim()) + '&body=' + encodeURIComponent($scope.description.trim()) + ':%20' + encodeURIComponent($scope.url.trim()) + '" target="_blank" title="Send email" onclick="window.open(\'mailto:?subject=\' + encodeURIComponent(document.title) + \'&body=\' +  encodeURIComponent(document.URL)); return false;"><img alt="Send email" src="images/' + $scope.icon_path + '/Email.' + $scope.format + '" /></a></li>\n';
             break;
 //            case 'php':
 //            break;
