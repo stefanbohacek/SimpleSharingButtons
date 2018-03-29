@@ -638,20 +638,17 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
     if ($scope.pocket){
       switch($scope.style){
         case "font_awesome":
-        /* NOT YET SUPPORTED
-
           switch ($scope.mode){
             case 'nojs':
+              $scope.html += '  <li><a href="https://getpocket.com/save?url=' + encodeURIComponent($scope.url.trim()) + '&title=' + encodeURIComponent($scope.title.trim()) + '" target="_blank" title="Add to Pocket"><i class="fab fab fa-get-pocket fa-2x" aria-hidden="true"></i><span class="sr-only">Add to Pocket</span></a></li></a></li>\n';
             break;
             case 'js':
-
+              $scope.html += '  <li><a href="https://getpocket.com/save?url=' + encodeURIComponent($scope.url.trim()) + '&title=' + encodeURIComponent($scope.title.trim()) + '" target="_blank" title="Add to Pocket"><i class="fab fab fa-get-pocket fa-2x" aria-hidden="true"></i><span class="sr-only">Add to Pocket</span></a></li>\n';
             break;
 //            case 'php':
 //            break;
           }
 
-          $scope.html += '  <li><a href="https://getpocket.com/save?url=' + encodeURIComponent($scope.url.trim()) + '&title=' + encodeURIComponent($scope.title.trim()) + '" target="_blank" title="Add to Pocket"><i class="fab fa-pocket-square fa-2x" aria-hidden="true"></i><span class="sr-only">Add to Pocket</span></a></li>\n';
-        */
         break;
         case "none":
           switch ($scope.mode){
