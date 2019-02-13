@@ -178,10 +178,10 @@
       <div class="instructions">
         <p>Choose <strong>JavaScript</strong> if you want to include the buttons on multiple pages, otherwise you can fill out the information below.</p>
         <p><strong>Hint:</strong> Once you add the URL, use the <i class="fa fa-magic"></i> icon to detect the information automatically.</p>
+        <p class="instructions" ng-show="show_fb_instructions"><strong>Note:</strong> Facebook <a href="https://developers.facebook.com/bugs/357750474364812/" target="_blank">no longer accepts custom parameters</a>, please use <a href="http://ogp.me/" target="_blank">Open Graph</a> instead.</p>
+        <p class="instructions mode-instructions" ng-show="show_jsmode_instructions"><strong>Note:</strong> Please set the "URL of your page" below to your home page. This will be a fallback URL when your visitor's JavaScript is disabled.</p>
+        <p class="instructions mode-instructions" ng-show="show_php_instructions"><strong>Note:</strong> ???</p>
       </div>
-      <p class="instructions" ng-show="show_fb_instructions"><strong>Note:</strong> Facebook <a href="https://developers.facebook.com/bugs/357750474364812/" target="_blank">no longer accepts custom parameters</a>, please use <a href="http://ogp.me/" target="_blank">Open Graph</a> instead.</p>
-      <p class="instructions mode-instructions" ng-show="show_jsmode_instructions"><strong>Note:</strong> Please set the "URL of your page" below to your home page. This will be a fallback URL when your visitor's JavaScript is disabled.</p>
-      <p class="instructions mode-instructions" ng-show="show_php_instructions"><strong>Note:</strong> ???</p>
       <form id="website-info">
       <ul>
       <li>
