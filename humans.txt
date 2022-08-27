@@ -5,10 +5,10 @@ SIMPLESHARINGBUTTONS.COM
 
 Stefan Bohacek
 
-  Email: stefan@fourtonfish.com
-  Website: http://fourtonfish.com/
-  Twitter: https://twitter.com/fourtonfish
-  GitHub: https://github.com/fourtonfish
+  Email: stefan@stefanbohacek.com
+  Website: http://stefanbohacek.com/
+  Twitter: https://twitter.com/stefanbohacek
+  GitHub: https://github.com/stefanbohacek
 
 /* SITE */
 
@@ -16,4 +16,4 @@ Language: English
 Powered by: HTML, CSS, JavaScript + AngularJS.
 IDE: Sublime Text
 Hosted on: DigitalOcean
-Source code: https://github.com/fourtonfish/SimpleSharingButtons
+Source code: https://github.com/stefanbohacek/SimpleSharingButtons

@@ -30,7 +30,7 @@ To use the Font Awesome icon font you can either download it from the [official 
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
 
 
-You can read more about the generator [on my blog](http://blog.fourtonfish.com/tagged/simple-sharing-buttons).
+You can read more about the generator [on my blog](https://stefanbohacek.com/tag/simple-sharing-buttons/).
 
 
 Please also see included *LICENSE.txt* and *License for Flat Web Icon Set.rtf*.

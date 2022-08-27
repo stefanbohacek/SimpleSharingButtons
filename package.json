@@ -3,12 +3,10 @@
   "version": "3.0.0",
   "description": "Simple Sharing Buttons Generator",
   "main": "index.html",
-  "dependencies": {
-    "gulp": "^3.9.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.24.7",
-    "gulp": "^3.8.5",
+    "gulp": "^3.9.1",
     "gulp-autoprefixer": "0.0.7",
     "gulp-cache": "^0.1.11",
     "gulp-clean": "^0.2.4",
@@ -18,11 +16,12 @@
     "gulp-minify-css": "^0.3.13",
     "gulp-notify": "^1.8.0",
     "gulp-rename": "^1.4.0",
-    "gulp-uglify": "^0.3.2"
+    "gulp-uglify": "^0.3.2",
+    "natives": "^1.1.6"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "stefan@fourtonfish.com",
+  "author": "stefan@stefanbohacek.com",
   "license": "MIT"
 }

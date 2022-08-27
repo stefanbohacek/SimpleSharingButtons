@@ -9,7 +9,7 @@ See updates and version history at [blog.simplesharingbuttons.com](http://blog.s
 ## Notes
 
 - This is an old project I started in early 2014 and there's quite a few things I wanted to clean up before open-sourcing it. Not having enough time to do that, I decided to put the source code on GitHub as it is.
-- The generator doesn't aim to support every possible network, as many icon sets are missing certain icons.  Check out [my blog](https://fourtonfish.com/blog/2013-09-simple-sharing-buttons-free/#other) to see how to implement buttons for some of the networks that are not included.
+- The generator doesn't aim to support every possible network, as many icon sets are missing certain icons.  Check out [my blog](https://stefanbohacek.com/blog/2013-09-simple-sharing-buttons-free/#other) to see how to implement buttons for some of the networks that are not included.
 - Also note that Facebook [no longer accepts custom parameters](https://developers.facebook.com/bugs/357750474364812), you need to use [Open Graph](http://ogp.me/) instead.
 
 ## Installation

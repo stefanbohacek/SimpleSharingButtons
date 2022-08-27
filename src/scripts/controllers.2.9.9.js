@@ -990,7 +990,7 @@ app.directive("sitesummary", ['$http', function($http){
         scope.$apply();
       }
 
-      $http.get('https://fourtonfish.com/sitesummary/?url=' + scope.url).success(function(data){
+      $http.get('https://stefanbohacek.com/sitesummary/?url=' + scope.url).success(function(data){
         scope.magic_icon = 'fa fa-magic';
         if (data.title != 'not found'){
           scope.title = data.title.trim();
