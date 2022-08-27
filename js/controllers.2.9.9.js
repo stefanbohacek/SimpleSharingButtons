@@ -992,25 +992,25 @@ app.directive("sitesummary", ['$http', function($http){
 
       $http.get('https://stefanbohacek.com/sitesummary/?url=' + scope.url).success(function(data){
         scope.magic_icon = 'fa fa-magic';
-        if (data.title != 'not found'){
+        if (data.title && data.title != 'not found'){
           scope.title = data.title.trim();
         }
         else{
           scope.title = '';         
         }
-        if (data.description != 'not found'){
+        if (data.description && data.description != 'not found'){
           scope.description = data.description.trim();
         }
         else{
           scope.description = '';         
         }
-        if (data.twitter != 'not found'){
+        if (data.twitter && data.twitter != 'not found'){
           scope.twitter_handle = data.twitter.trim();
         }
         else{
           scope.twitter_handle = '';          
         }
-        if (data.image != 'not found'){
+        if (data.image && data.image != 'not found'){
           scope.preview_image_url = data.image.trim();
         }
         else{
