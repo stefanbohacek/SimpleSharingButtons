@@ -400,7 +400,7 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
       break;
     }
 
-    $scope.html = '<ul class="share-buttons">\n';
+    $scope.html = '<ul class="share-buttons" data-source="simplesharingbuttons.com">\n';
 
     if (!$scope.facebook){
       $scope.show_fb_instructions = false;
