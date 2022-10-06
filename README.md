@@ -23,7 +23,7 @@ The site will be accessible at `http://localhost:3000/`.
 
 ## Sites using SSB
 
-- [thesocietypages.org](https://thesocietypages.org/) (on article pages)
+- [thesocietypages.org](https://thesocietypages.org/)
 - [explorableexplanations.com](http://explorableexplanations.com/)
 - [earthprimer.com](http://www.earthprimer.com/)
 
