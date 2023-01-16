@@ -511,41 +511,6 @@ app.controller('AppCtrl', ['$scope', '$http', '$sce',
       }
     }
 
-    if ($scope.google_plus){
-      switch($scope.style){
-        case "font_awesome":
-          switch ($scope.mode){
-            case 'nojs':
-              $scope.html += '  <li><a href="https://plus.google.com/share?url=' + encodeURIComponent($scope.url.trim()) + '" target="_blank" title="Share on Google+"><i class="fab fa-google-plus-square fa-2x" aria-hidden="true"></i><span class="sr-only">Share on Google+</span></a></li>\n';
-            break;
-            case 'js':
-              $scope.html += '  <li><a href="https://plus.google.com/share?url=' + encodeURIComponent($scope.url.trim()) + '" target="_blank" title="Share on Google+" onclick="window.open(\'https://plus.google.com/share?url=\' + encodeURIComponent(document.URL)); return false;"><i class="fab fa-google-plus-square fa-2x" aria-hidden="true"></i><span class="sr-only">Share on Google+</span></a></li>\n';
-            break;
-          }
-        break;
-        case "none":
-          switch ($scope.mode){
-            case 'nojs':
-              $scope.html += '  <li><a href="https://plus.google.com/share?url=' + encodeURIComponent($scope.url.trim()) + '" target="_blank" title="Share on Google+">Google+</a></li>\n';
-            break;
-            case 'js':
-              $scope.html += '  <li><a href="https://plus.google.com/share?url=' + encodeURIComponent($scope.url.trim()) + '" target="_blank" title="Share on Google+" onclick="window.open(\'https://plus.google.com/share?url=\' + encodeURIComponent(document.URL)); return false;">Google+</a></li>\n';
-            break;
-          }
-        break;
-        default:
-          switch ($scope.mode){
-            case 'nojs':
-              $scope.html += '  <li><a href="https://plus.google.com/share?url=' + encodeURIComponent($scope.url.trim()) + '" target="_blank" title="Share on Google+"><img alt="Share on Google+" src="images/' + $scope.icon_path + '/Google+.' + $scope.format + '" /></a></li>\n';
-            break;
-            case 'js':
-              $scope.html += '  <li><a href="https://plus.google.com/share?url=' + encodeURIComponent($scope.url.trim()) + '" target="_blank" title="Share on Google+" onclick="window.open(\'https://plus.google.com/share?url=\' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Google+" src="images/' + $scope.icon_path + '/Google+.' + $scope.format + '" /></a></li>\n';
-            break;
-          }
-        break;
-      }
-    }
-
     if ($scope.tumblr){
       switch($scope.style){
         case "font_awesome":
@@ -990,7 +955,7 @@ app.directive("sitesummary", ['$http', function($http){
         scope.$apply();
       }
 
-      $http.get('https://stefanbohacek.com/sitesummary/?url=' + scope.url).success(function(data){
+      $http.get('https://metascraper.stefanbohacek.dev/?url=' + scope.url).success(function(data){
         scope.magic_icon = 'fa fa-magic';
         if (data.title && data.title != 'not found'){
           scope.title = data.title.trim();

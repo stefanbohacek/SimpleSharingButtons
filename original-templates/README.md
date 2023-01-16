@@ -6,7 +6,6 @@ This repository hosts the basic code for the HTML sharing buttons for all suppor
 
 * Facebook
 * Twitter
-* Google+
 * Tumblr
 * Pinterest
 * Pocket

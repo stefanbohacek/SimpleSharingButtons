@@ -1,6 +1,6 @@
 # Simple Sharing Buttons
 
-Create [light-weight](http://www.ericmobley.net/social-media-share-buttons-impact-on-performance/), mobile-friendly sharing buttons for Facebook, Twitter, Google+ and other social media sites.
+Create [light-weight](http://www.ericmobley.net/social-media-share-buttons-impact-on-performance/), mobile-friendly sharing buttons for Facebook, Twitter, and other social media sites.
 
 [Speed up your website or web app](http://zurb.com/article/883/small-painful-buttons-why-social-media-bu), avoid downloading [unnecessary JavaScript files](http://www.benmarshall.me/sharethis-slowing-down-site/) and [keep your user's activity private](https://en.wikipedia.org/wiki/Facebook_like_button#Privacy_issues). Choose from several styles, including [Font Awesome](http://fontawesome.io/) -- completely free.
 
