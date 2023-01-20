@@ -1,12 +1,12 @@
 CACHE MANIFEST
 # Version 2.7
 /css/styles.min.css
-/images/flat-web-icon-set-color-alt.png
-/images/flat-web-icon-set-black-alt.png
-/images/flat-web-icon-set-color-alt.png
-/images/flat-web-icon-set-inverted-alt.png
-/images/simple-icons-alt.png
-/images/simple-icons-black-alt.png
+/images/previews/flat-web-icon-set-color-alt.png
+/images/previews/flat-web-icon-set-black-alt.png
+/images/previews/flat-web-icon-set-color-alt.png
+/images/previews/flat-web-icon-set-inverted-alt.png
+/images/previews/simple-icons-alt.png
+/images/previews/simple-icons-black-alt.png
 /js/controllers.2.6.js
 http://stefanbohacek.com/1px.png
 
