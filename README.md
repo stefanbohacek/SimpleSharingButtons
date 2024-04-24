@@ -4,7 +4,7 @@ Create [light-weight](http://www.ericmobley.net/social-media-share-buttons-impac
 
 [Speed up your website or web app](http://zurb.com/article/883/small-painful-buttons-why-social-media-bu), avoid downloading [unnecessary JavaScript files](http://www.benmarshall.me/sharethis-slowing-down-site/) and [keep your user's activity private](https://en.wikipedia.org/wiki/Facebook_like_button#Privacy_issues). Choose from several styles, including [Font Awesome](http://fontawesome.io/) -- completely free.
 
-See updates and version history at [blog.simplesharingbuttons.com](http://blog.simplesharingbuttons.com/).
+See updates and version history at [simplesharingbuttons.tumblr.com](https://simplesharingbuttons.tumblr.com/).
 
 ## Notes
 
