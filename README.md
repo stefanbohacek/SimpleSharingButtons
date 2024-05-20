@@ -31,3 +31,7 @@ And of course:
 
 - [simplesharingbuttons.com](https://simplesharingbuttons.com/)
 - [botwiki.org](https://botwiki.org/)
+
+## Attributions
+
+This project is tested with [BrowserStack](https://browserstack.com/).
